@@ -3,54 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certified Pool Compliance — Full Site Preview</title>
+<title>Certified Pool Compliance, Full Site Preview</title>
 <style>
 /* ============================================================
-   Certified Pool Compliance — brand stylesheet v3
-   Plain, trustworthy trade-business look — no gradients, no glow
+   Certified Pool Compliance, brand stylesheet v4
+   Vivid, modern, pool-brand look, gradients, glow, depth
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@500&display=swap');
 
 :root{
-  --navy-950:#0c1728;
-  --navy-900:#16233b;
-  --navy-850:#1b2c48;
-  --navy-800:#22355a;
-  --navy-700:#304a75;
-  --navy-600:#3f5f92;
+  --navy-950:#0a1526;
+  --navy-900:#132038;
+  --navy-850:#16294a;
+  --navy-800:#1d3661;
+  --navy-700:#2b4d85;
+  --navy-600:#3a63a8;
 
-  --mint-500:#20b899;
-  --mint-400:#3ddcb8;
-  --mint-300:#8ff0d9;
-  --mint-100:#e5faf3;
+  --mint-500:#0fb894;
+  --mint-400:#1fe0b8;
+  --mint-300:#8ff5dd;
+  --mint-100:#e2fbf3;
 
-  --bg:#eef1f6;
-  --bg-alt:#e6ebf2;
+  --blue-600:#2f6bff;
+  --blue-500:#3b82f6;
+  --blue-400:#5da2ff;
+
+  --grad-brand:linear-gradient(135deg, var(--mint-400) 0%, var(--blue-500) 100%);
+  --grad-brand-strong:linear-gradient(135deg, var(--mint-500) 0%, var(--blue-600) 100%);
+  --grad-navy:linear-gradient(160deg, var(--navy-850) 0%, var(--navy-950) 100%);
+
+  --bg:#eef2f9;
+  --bg-alt:#e5edf9;
   --surface:#ffffff;
-  --ink:#101827;
+  --ink:#0d1626;
   --muted:#5b6472;
   --paper:#eef1f6;
   --ivory:#e6ebf2;
 
-  --amber:#e8a13f;
+  --amber:#ff9f43;
+  --coral:#ff5f7e;
 
   --line:rgba(16,24,39,0.10);
   --line-soft:rgba(16,24,39,0.07);
-  --line-invert:rgba(255,255,255,0.14);
+  --line-invert:rgba(255,255,255,0.16);
 
-  --font-display:'IBM Plex Sans', -apple-system, sans-serif;
-  --font-body:'IBM Plex Sans', -apple-system, sans-serif;
+  --font-display:'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-body:'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-mono:'IBM Plex Mono', monospace;
 
   --container:1180px;
-  --radius-sm:6px;
-  --radius-md:8px;
-  --radius-lg:10px;
-  --radius-pill:6px;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --radius-pill:999px;
 
-  --shadow-soft:0 10px 24px -14px rgba(16,24,39,0.24);
-  --shadow-card:0 2px 10px -4px rgba(16,24,39,0.14);
+  --shadow-soft:0 20px 44px -16px rgba(10,21,38,0.32);
+  --shadow-card:0 10px 26px -12px rgba(10,21,38,0.18);
+  --shadow-glow:0 14px 34px -10px rgba(47,107,255,0.45), 0 4px 14px -4px rgba(15,184,148,0.35);
+  --shadow-glow-lg:0 24px 60px -14px rgba(47,107,255,0.5), 0 8px 22px -6px rgba(15,184,148,0.4);
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -71,7 +82,10 @@ h1,h2,h3,h4{
   margin:0; font-family:var(--font-display); font-weight:700;
   letter-spacing:-0.01em; line-height:1.12;
 }
-h1 em, h2 em, h3 em{ font-style:normal; font-weight:inherit; color:inherit; }
+h1 em, h2 em, h3 em{
+  font-style:normal; font-weight:inherit;
+  background:var(--grad-brand-strong); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
 p{ margin:0; }
 button{ font-family:inherit; cursor:pointer; }
 
@@ -156,20 +170,25 @@ button{ font-family:inherit; cursor:pointer; }
 
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  font-family:var(--font-body); font-weight:600; font-size:14.5px; letter-spacing:0.005em;
-  padding:13px 26px;
+  font-family:var(--font-body); font-weight:700; font-size:14.5px; letter-spacing:0.005em;
+  padding:14px 28px;
   border:1px solid transparent;
   border-radius:var(--radius-pill);
-  transition:background-color .15s ease, border-color .15s ease, color .15s ease;
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
   white-space:nowrap;
 }
-.btn-coral{ background:var(--mint-500); color:#ffffff; }
-.btn-coral:hover{ background:var(--mint-400); }
+.btn-coral{ background:var(--grad-brand-strong); color:#ffffff; box-shadow:var(--shadow-glow); }
+.btn-coral:hover{ transform:translateY(-3px) scale(1.02); box-shadow:var(--shadow-glow-lg); }
 .btn-outline-light{ border-color:var(--line-invert); color:#f6f8fb; }
-.btn-outline-light:hover{ border-color:var(--mint-400); color:var(--mint-300); }
+.btn-outline-light:hover{ border-color:var(--mint-400); color:var(--mint-300); transform:translateY(-2px); }
 .btn-navy{ background:var(--navy-900); color:#f6f8fb; }
-.btn-navy:hover{ background:var(--navy-700); }
+.btn-navy:hover{ background:var(--navy-700); transform:translateY(-2px); }
 .btn-block{ width:100%; }
+.btn-xl{
+  padding:22px 44px; font-size:18px; letter-spacing:0.01em;
+  border-radius:var(--radius-pill);
+}
+.btn-xl:hover{ transform:translateY(-4px) scale(1.03); }
 
 .nav-toggle{ display:none; }
 
@@ -180,93 +199,109 @@ button{ font-family:inherit; cursor:pointer; }
   position:relative;
   overflow:hidden;
   color:#f6f8fb;
-  padding:88px 0 0;
+  padding:64px 0 0;
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+}
+.hero-media{ position:absolute; inset:0; z-index:0; background:var(--navy-950); }
+.hero-media video{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero-media::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,21,38,0.45) 0%, rgba(10,21,38,0.6) 45%, rgba(10,21,38,0.92) 100%),
+    linear-gradient(115deg, rgba(15,184,148,0.28) 0%, rgba(47,107,255,0.22) 45%, transparent 75%);
 }
 .hero-grid{
   display:grid;
   grid-template-columns:1.05fr 0.95fr;
-  gap:40px;
+  gap:44px;
   align-items:center;
   position:relative; z-index:2;
-  padding-bottom:64px;
+  padding:56px 0 80px;
+  width:100%;
 }
 .hero h1{
-  font-size:clamp(38px,5vw,58px);
+  font-size:clamp(40px,5.4vw,62px);
   margin:20px 0 0;
   color:#f6f8fb;
-  font-weight:700;
+  font-weight:800;
+  letter-spacing:-0.02em;
 }
 .hero-lede{
   font-family:var(--font-body);
-  font-size:18px;
+  font-size:18.5px;
   line-height:1.7;
-  color:rgba(246,248,251,0.72);
+  color:rgba(246,248,251,0.8);
   max-width:52ch;
   margin:24px 0 34px;
 }
-.hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+.hero-ctas{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; }
 .hero-microline{
-  display:flex; align-items:center; gap:10px; margin-top:22px;
-  font-size:13.5px; color:rgba(246,248,251,0.55);
+  display:flex; align-items:center; gap:10px; margin-top:26px;
+  font-size:13.5px; color:rgba(246,248,251,0.6);
 }
 .hero-microline svg{ width:16px; height:16px; stroke:var(--mint-400); flex-shrink:0; }
 
-/* Hero side panel — real photo with a dark scrim so text stays readable */
-.hero-photo-panel{
+/* Hero booking panel, floats over the video, this is the main top-fold conversion point */
+.hero-form-panel{
+  position:relative;
   border-radius:var(--radius-lg);
-  overflow:hidden;
-  border:1px solid var(--line-invert);
-  background-color:var(--navy-850,#1b2c48);
-  background-image:
-    linear-gradient(180deg, rgba(12,23,40,0.20) 0%, rgba(12,23,40,0.55) 55%, rgba(12,23,40,0.94) 100%),
-    url('https://images.pexels.com/photos/1025344/pexels-photo-1025344.jpeg?auto=compress&cs=tinysrgb&w=1400');
-  background-size:cover;
-  background-position:center;
-  min-height:380px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:26px;
+  border:1px solid rgba(255,255,255,0.22);
+  background:rgba(10,21,38,0.6);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  box-shadow:var(--shadow-glow-lg);
+  padding:38px 36px 34px;
 }
-.hero-photo-panel .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
-.hero-photo-panel .badge{
-  display:inline-flex; align-items:center; gap:8px;
-  background:rgba(12,23,40,0.72); border:1px solid var(--line-invert);
-  border-radius:var(--radius-pill); padding:8px 14px;
-  font-size:12.5px; color:rgba(246,248,251,0.92);
-  backdrop-filter:blur(2px);
+.hero-form-panel::before{
+  content:"";
+  position:absolute; inset:0; border-radius:inherit; padding:1px;
+  background:var(--grad-brand); opacity:0.55;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  pointer-events:none;
 }
-.hero-photo-panel .badge svg{ width:15px; height:15px; stroke:var(--mint-400); flex-shrink:0; }
-.hero-photo-panel h3{
-  font-size:20px; font-weight:700; color:#f6f8fb;
-  text-shadow:0 1px 8px rgba(0,0,0,0.4);
+.hero-form-panel .eyebrow{ margin-bottom:4px; }
+.hero-form-panel h3{
+  font-size:23px; font-weight:700; color:#f6f8fb; margin-top:10px;
 }
-.hero-photo-panel p{
-  font-size:14px; color:rgba(246,248,251,0.78); margin-top:8px; line-height:1.6;
-  text-shadow:0 1px 8px rgba(0,0,0,0.4);
+.hero-form-panel > p.panel-sub{
+  font-size:14.5px; color:rgba(246,248,251,0.72); margin-top:8px; line-height:1.6;
 }
-
-/* Hero stat row */
-.hero-stats-row{
-  position:relative; z-index:2;
-  display:grid; grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line-invert);
-}
-.hero-stats-row .stat{
-  padding:28px 30px 34px;
-  border-left:1px solid var(--line-invert);
-}
-.hero-stats-row .stat:first-child{ border-left:none; padding-left:0; }
-.hero-stats-row .stat .n{
-  font-family:var(--font-display); font-size:32px; font-weight:600; color:#f6f8fb;
-}
-.hero-stats-row .stat .l{
-  font-size:13px; color:rgba(246,248,251,0.58); margin-top:6px; line-height:1.5;
-}
-.hero-stats-row .stat .l b{ color:var(--mint-300); font-weight:600; }
+.hero-form-panel form{ margin-top:22px; }
+.hero-form-panel .btn-block{ margin-top:6px; }
+.hero-form-panel .form-note{ text-align:center; }
 
 /* Ladder watermark */
 .hero .ladder-watermark{ display:none; }
+
+/* ============================================================
+   CREDENTIAL MARQUEE
+   ============================================================ */
+.credential-marquee{
+  position:relative; z-index:3;
+  overflow:hidden;
+  background:var(--grad-navy);
+  padding:22px 0;
+  border-top:1px solid var(--line-invert);
+  border-bottom:1px solid var(--line-invert);
+}
+.marquee-track{
+  display:flex; width:max-content;
+  animation:marquee-scroll 24s linear infinite;
+}
+.marquee-set{ display:flex; align-items:center; gap:52px; padding-right:52px; flex-shrink:0; }
+.marquee-item{
+  display:flex; align-items:center; gap:12px;
+  font-family:var(--font-display); font-weight:700; font-size:21px;
+  letter-spacing:0.005em; color:#f6f8fb; white-space:nowrap;
+}
+.marquee-item svg{ width:24px; height:24px; stroke:var(--mint-400); flex-shrink:0; }
+.marquee-dot{ width:7px; height:7px; border-radius:50%; background:var(--mint-400); opacity:0.65; margin:0 6px; }
+@keyframes marquee-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
 
 /* ============================================================
    WAVE DIVIDER
@@ -314,10 +349,16 @@ section{ position:relative; }
   border-radius:var(--radius-lg);
   padding:34px 30px;
   position:relative;
+  overflow:hidden;
   box-shadow:var(--shadow-card);
   transition:transform .25s ease, box-shadow .25s ease;
 }
-.service-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-soft); }
+.service-card::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:4px;
+  background:var(--grad-brand); opacity:0; transition:opacity .25s ease;
+}
+.service-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-glow); }
+.service-card:hover::before{ opacity:1; }
 .service-card .icon-badge{
   width:52px; height:52px; border-radius:50%;
   background:var(--mint-100); display:flex; align-items:center; justify-content:center;
@@ -612,10 +653,9 @@ section{ position:relative; }
    RESPONSIVE
    ============================================================ */
 @media (max-width:980px){
-  .hero-grid{ grid-template-columns:1fr; gap:32px; padding-bottom:48px; }
-  .hero-photo-panel{ order:-1; min-height:260px; }
-  .hero-stats-row{ grid-template-columns:repeat(2,1fr); }
-  .hero-stats-row .stat:nth-child(3){ border-left:none; padding-left:0; }
+  .hero{ min-height:auto; padding:40px 0 0; }
+  .hero-grid{ grid-template-columns:1fr; gap:32px; padding:32px 0 56px; }
+  .hero-form-panel{ order:-1; padding:30px 26px; }
   .service-grid{ grid-template-columns:repeat(2,1fr); }
   .review-grid{ grid-template-columns:1fr; }
   .footer-grid{ grid-template-columns:1fr 1fr; }
@@ -643,13 +683,10 @@ section{ position:relative; }
   .footer-grid{ grid-template-columns:1fr 1fr; gap:32px; }
   .form-row{ grid-template-columns:1fr; }
   .cta-band .container{ flex-direction:column; align-items:flex-start; }
-  .hero-stats-row{ grid-template-columns:1fr 1fr; }
+  .marquee-item{ font-size:16px; }
 }
 @media (max-width:560px){
   .footer-grid{ grid-template-columns:1fr; }
-  .hero-stats-row{ grid-template-columns:1fr; }
-  .hero-stats-row .stat{ border-left:none; padding-left:0; border-top:1px solid var(--line-invert); padding-top:20px; }
-  .hero-stats-row .stat:first-child{ border-top:none; padding-top:0; }
 }
 
 </style>
@@ -687,15 +724,20 @@ section{ position:relative; }
 
 <div class="spa-page" id="page-home" style="display:block;">
 <!-- ============ HERO ============ -->
-<section class="hero blueprint-bg" style="position:relative;">
+<section class="hero">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
+      <source src="assets/video/pool-hero.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="container">
     <div class="hero-grid">
       <div>
         <p class="eyebrow">Licensed QLD, NSW &amp; VIC Pool Safety Inspections</p>
-        <h1>Safe pools save lives. We make yours compliant.</h1>
-        <p class="hero-lede">Independent pool safety inspections and compliance certificates for QLD, NSW and VIC — from Cairns to the Gold Coast, across Sydney and the Central Coast, and through Melbourne and Geelong.</p>
+        <h1>Safe pools save lives. We make yours <em>compliant.</em></h1>
+        <p class="hero-lede">Independent pool safety inspections and compliance certificates for QLD, NSW and VIC, from Cairns to the Gold Coast, across Sydney and the Central Coast, and through Melbourne and Geelong.</p>
         <div class="hero-ctas">
-          <a class="spa-link btn btn-coral" href="#" data-page="contact">Book an Inspection</a>
+          <a class="spa-link btn btn-coral btn-xl" href="#" data-page="contact">Book an Inspection</a>
           <a class="spa-link btn btn-outline-light" href="#" data-page="areas">Check My Area</a>
         </div>
         <div class="hero-microline">
@@ -703,23 +745,87 @@ section{ position:relative; }
           Enquiries before 3pm are actioned the same business day.
         </div>
       </div>
-      <!-- Photo: Josh Sorenson via Pexels (free to use, no attribution required) — swap for your own pool/fence photo when you have one -->
-      <div class="hero-photo-panel">
-        <div class="badge-row">
-          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Licensed inspector — Lic #[insert]</span>
-          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg> 10+ yrs in pool fencing</span>
-          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1,000+ inspections completed</span>
-        </div>
-        <h3>On-site inspections across three states</h3>
-        <p>Same standard, whether it's a backyard pool in Cairns or an apartment complex spa in Melbourne.</p>
+
+      <div class="hero-form-panel">
+        <p class="eyebrow">Get A Fixed Price</p>
+        <h3>Book your inspection now</h3>
+        <p class="panel-sub">Tell us your suburb and what you need. We confirm a fixed price and the next available date, usually within one business day.</p>
+        <form class="site-enquiry-form" id="hero-enquiry-form">
+          <div class="form-row">
+            <div class="field">
+              <label for="hero-name">Full name</label>
+              <input type="text" id="hero-name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="hero-phone">Phone number</label>
+              <input type="tel" id="hero-phone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="hero-suburb">Suburb</label>
+              <input type="text" id="hero-suburb" name="suburb" required>
+            </div>
+            <div class="field">
+              <label for="hero-state">State</label>
+              <select id="hero-state" name="state" required>
+                <option value="">Select state</option>
+                <option value="QLD">Queensland</option>
+                <option value="NSW">New South Wales</option>
+                <option value="VIC">Victoria</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field full">
+              <label for="hero-service">What do you need?</label>
+              <select id="hero-service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="New inspection / first certificate">New inspection / first certificate</option>
+                <option value="Certificate renewal">Certificate renewal</option>
+                <option value="Pre-purchase / pre-sale check">Pre-purchase / pre-sale check</option>
+                <option value="New pool or spa sign-off">New pool or spa sign-off</option>
+                <option value="Rectification follow-up">Rectification follow-up</option>
+                <option value="Not sure, need advice">Not sure, need advice</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-coral btn-xl btn-block">Book My Inspection</button>
+          <p class="form-note" id="hero-form-status">Fixed price, confirmed before we book. No spam, no call centre.</p>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
+<div class="credential-marquee">
+  <div class="marquee-track">
+    <div class="marquee-set">
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Licensed Inspector, Lic #[insert]</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg> 10+ Years In Pool Fencing</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1,000+ Inspections Completed</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> QLD &middot; NSW &middot; VIC Statewide</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-set" aria-hidden="true">
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Licensed Inspector, Lic #[insert]</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg> 10+ Years In Pool Fencing</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1,000+ Inspections Completed</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> QLD &middot; NSW &middot; VIC Statewide</span>
+      <span class="marquee-dot"></span>
+    </div>
+  </div>
+</div>
+
 <div class="wave-divider">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#16233b"/>
+    <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#132038"/>
     <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef1f6"/>
   </svg>
 </div>
@@ -731,7 +837,7 @@ section{ position:relative; }
       <div>
         <p class="eyebrow on-light">Why It Matters</p>
         <h2 style="color:var(--navy-900); font-size:clamp(32px,4vw,50px); margin-top:16px;">A non-compliant pool isn't just a fine.</h2>
-        <p style="font-size:16.5px; color:rgba(11,20,32,0.68); margin-top:20px; max-width:52ch; line-height:1.7;">Nationally, backyard pools account for the majority of pool-related drowning deaths among young children, and half of all under-five drowning deaths happen in home swimming pools.<sup style="font-size:11px;">1</sup> A compliant fence, gate and CPR sign isn't paperwork for its own sake — it's the barrier between a backyard and a tragedy.</p>
+        <p style="font-size:16.5px; color:rgba(11,20,32,0.68); margin-top:20px; max-width:52ch; line-height:1.7;">Nationally, backyard pools account for the majority of pool-related drowning deaths among young children, and half of all under-five drowning deaths happen in home swimming pools.<sup style="font-size:11px;">1</sup> A compliant fence, gate and CPR sign isn't paperwork for its own sake, it's the barrier between a backyard and a tragedy.</p>
         <p style="font-size:14px; color:rgba(11,20,32,0.45); margin-top:16px;">1. Royal Life Saving Society Australia, National Drowning Report 2025.</p>
         <div class="stat-row">
           <div class="s"><div class="n">68%</div><div class="l">Of pool drownings occur in backyard pools</div></div>
@@ -742,7 +848,7 @@ section{ position:relative; }
         <div class="credential-list">
           <div class="row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <p><strong>You won't get a jargon-filled checklist.</strong> Every report explains what failed, why it matters, and exactly how to fix it — in plain English.</p>
+            <p><strong>You won't get a jargon-filled checklist.</strong> Every report explains what failed, why it matters, and exactly how to fix it, in plain English.</p>
           </div>
           <div class="row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
@@ -788,7 +894,7 @@ section{ position:relative; }
       <div class="service-card">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
         <h3>Pre-Purchase &amp; Pre-Sale Checks</h3>
-        <p>Know the pool's compliance status before you buy, sell or list — avoid settlement delays and last-minute surprises.</p>
+        <p>Know the pool's compliance status before you buy, sell or list, avoid settlement delays and last-minute surprises.</p>
         <span class="tag-label">Settlement-ready</span>
       </div>
       <div class="service-card">
@@ -800,7 +906,7 @@ section{ position:relative; }
       <div class="service-card">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
         <h3>Re-Inspections &amp; Renewals</h3>
-        <p>We track your certificate's expiry date and book your renewal inspection before it lapses — no scrambling.</p>
+        <p>We track your certificate's expiry date and book your renewal inspection before it lapses, no scrambling.</p>
         <span class="tag-label">Expiry tracked for you</span>
       </div>
     </div>
@@ -828,7 +934,7 @@ section{ position:relative; }
       </div>
       <div class="state-block">
         <div class="code">VICTORIA</div>
-        <h4>Form 23 — Barrier Compliance</h4>
+        <h4>Form 23 &middot; Barrier Compliance</h4>
         <p>Issued following council-registered inspection under Victoria's pool barrier reforms. Registered pools are re-inspected on a set cycle to stay compliant.</p>
       </div>
     </div>
@@ -876,7 +982,7 @@ section{ position:relative; }
     <div class="steps">
       <div class="step" data-n="01">
         <h4>Book online or by phone</h4>
-        <p>Tell us your suburb, pool type and what you need — a first certificate, renewal or pre-purchase check.</p>
+        <p>Tell us your suburb, pool type and what you need, a first certificate, renewal or pre-purchase check.</p>
       </div>
       <div class="step" data-n="02">
         <h4>On-site inspection</h4>
@@ -900,12 +1006,12 @@ section{ position:relative; }
     <div class="section-head" style="margin-bottom:32px;">
       <p class="eyebrow on-light">Client Reviews</p>
       <h2>What clients say</h2>
-      <p>Swap these three for your real Google reviews before publishing — don't leave placeholder quotes live.</p>
+      <p>Swap these three for your real Google reviews before publishing, don't leave placeholder quotes live.</p>
     </div>
     <div class="review-grid">
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>[Insert a real client review here — what they needed, how it went, any specific detail worth quoting.]</p>
+        <p>[Insert a real client review here, what they needed, how it went, any specific detail worth quoting.]</p>
         <cite>[Client name]<span>[Suburb]</span></cite>
       </div>
       <div class="review-card">
@@ -942,7 +1048,7 @@ section{ position:relative; }
   <div class="container">
     <p class="eyebrow">What We Do</p>
     <h1>Services</h1>
-    <p>Inspections, certificates, rectification and renewals — everything needed to get and keep a pool compliant across QLD, NSW and VIC.</p>
+    <p>Inspections, certificates, rectification and renewals, everything needed to get and keep a pool compliant across QLD, NSW and VIC.</p>
   </div>
 </section>
 
@@ -958,13 +1064,13 @@ section{ position:relative; }
     <div class="section-head">
       <p class="eyebrow on-light">Everything The Certificate Needs</p>
       <h2>Handled by <em>one inspector.</em></h2>
-      <p>Selling, leasing, or just getting compliant — you get a straight answer, a documented report, and the right paperwork lodged the same way every time.</p>
+      <p>Selling, leasing, or just getting compliant, you get a straight answer, a documented report, and the right paperwork lodged the same way every time.</p>
     </div>
     <div class="service-grid">
       <a href="#inspections" class="service-card">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 4v5"/></svg></div>
         <h3>Pool Safety Inspection</h3>
-        <p>A full assessment of your barrier, gates, latches and CPR signage against the current standard — with a plain-English report on where you stand.</p>
+        <p>A full assessment of your barrier, gates, latches and CPR signage against the current standard, with a plain-English report on where you stand.</p>
         <span class="tag-label">Fixed price · ~45 min on site</span>
       </a>
       <a href="#certificates" class="service-card">
@@ -976,7 +1082,7 @@ section{ position:relative; }
       <a href="#rectification" class="service-card">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
         <h3>Non-Compliance &amp; Rectification</h3>
-        <p>If something needs fixing, you get an itemised report — exactly what's wrong, what fixes it, and a fast re-inspection once it's sorted.</p>
+        <p>If something needs fixing, you get an itemised report, exactly what's wrong, what fixes it, and a fast re-inspection once it's sorted.</p>
         <span class="tag-label">Itemised, photo-referenced</span>
       </a>
       <a href="#pre-purchase" class="service-card">
@@ -994,7 +1100,7 @@ section{ position:relative; }
       <a href="#renewals" class="service-card">
         <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
         <h3>Re-Inspection &amp; Renewal</h3>
-        <p>We track your certificate's expiry date and book the renewal before it lapses — no scrambling, no surprise notices.</p>
+        <p>We track your certificate's expiry date and book the renewal before it lapses, no scrambling, no surprise notices.</p>
         <span class="tag-label">Expiry tracked for you</span>
       </a>
     </div>
@@ -1006,7 +1112,7 @@ section{ position:relative; }
 
     <div class="service-detail" id="inspections">
       <div>
-        <p class="tag">01 — Inspections</p>
+        <p class="tag">01 &middot; Inspections</p>
         <h3>Pool Safety Inspections</h3>
         <div class="meta">
           <div>On-site, ~45 mins</div>
@@ -1015,7 +1121,7 @@ section{ position:relative; }
         </div>
       </div>
       <div>
-        <p>A full assessment of your pool barrier, gates, latches, CPR signage and surrounds against your state's current pool safety standard. We check the things inspectors actually fail pools on — not just the obvious stuff.</p>
+        <p>A full assessment of your pool barrier, gates, latches, CPR signage and surrounds against your state's current pool safety standard. We check the things inspectors actually fail pools on, not just the obvious stuff.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fence height, gap and climbability checks</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Self-closing, self-latching gate testing</li>
@@ -1027,7 +1133,7 @@ section{ position:relative; }
 
     <div class="service-detail" id="certificates">
       <div>
-        <p class="tag">02 — Certification</p>
+        <p class="tag">02 &middot; Certification</p>
         <h3>Certificates &amp; Lodgement</h3>
         <div class="meta">
           <div>QLD · NSW · VIC</div>
@@ -1035,18 +1141,18 @@ section{ position:relative; }
         </div>
       </div>
       <div>
-        <p>Once your pool passes, we issue the correct certificate for your state and lodge it with the relevant register or council — so it's actually on file, not just sitting in your inbox.</p>
+        <p>Once your pool passes, we issue the correct certificate for your state and lodge it with the relevant register or council, so it's actually on file, not just sitting in your inbox.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> QLD Form 23 Pool Safety Certificate — QBCC Pool Safety Register</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> NSW Certificate of Compliance — NSW Swimming Pool Register</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> VIC Form 23 — Certificate of Barrier Compliance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> QLD Form 23 Pool Safety Certificate &middot; QBCC Pool Safety Register</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> NSW Certificate of Compliance &middot; NSW Swimming Pool Register</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> VIC Form 23 &middot; Certificate of Barrier Compliance</li>
         </ul>
       </div>
     </div>
 
     <div class="service-detail" id="rectification">
       <div>
-        <p class="tag">03 — Rectification</p>
+        <p class="tag">03 &middot; Rectification</p>
         <h3>Non-Compliance &amp; Rectification Reports</h3>
         <div class="meta">
           <div>Itemised report</div>
@@ -1054,7 +1160,7 @@ section{ position:relative; }
         </div>
       </div>
       <div>
-        <p>If your pool doesn't pass, you get an itemised, plain-English report on exactly what's wrong and what standard it needs to meet — not a vague "non-compliant" stamp. Prefer not to DIY the fix? We can put you in touch with fencing and gate trades we trust.</p>
+        <p>If your pool doesn't pass, you get an itemised, plain-English report on exactly what's wrong and what standard it needs to meet, not a vague "non-compliant" stamp. Prefer not to DIY the fix? We can put you in touch with fencing and gate trades we trust.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Photo-referenced fault list</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Council notification timeframes explained</li>
@@ -1065,7 +1171,7 @@ section{ position:relative; }
 
     <div class="service-detail" id="pre-purchase">
       <div>
-        <p class="tag">04 — Buying &amp; Selling</p>
+        <p class="tag">04 &middot; Buying &amp; Selling</p>
         <h3>Pre-Purchase &amp; Pre-Sale Checks</h3>
         <div class="meta">
           <div>Fast turnaround</div>
@@ -1084,7 +1190,7 @@ section{ position:relative; }
 
     <div class="service-detail" id="new-builds">
       <div>
-        <p class="tag">05 — New Builds</p>
+        <p class="tag">05 &middot; New Builds</p>
         <h3>New Pool &amp; Spa Sign-Off</h3>
         <div class="meta">
           <div>Builder coordination</div>
@@ -1092,7 +1198,7 @@ section{ position:relative; }
         </div>
       </div>
       <div>
-        <p>Just had a pool or spa installed? We coordinate the final inspection with your builder or pool company's timeline and issue the first compliance certificate — no delays chasing an inspector.</p>
+        <p>Just had a pool or spa installed? We coordinate the final inspection with your builder or pool company's timeline and issue the first compliance certificate, no delays chasing an inspector.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Booked around your builder's handover date</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> First-time compliance certificate issued on pass</li>
@@ -1102,7 +1208,7 @@ section{ position:relative; }
 
     <div class="service-detail" id="renewals">
       <div>
-        <p class="tag">06 — Ongoing</p>
+        <p class="tag">06 &middot; Ongoing</p>
         <h3>Re-Inspections &amp; Renewals</h3>
         <div class="meta">
           <div>Expiry tracking</div>
@@ -1110,7 +1216,7 @@ section{ position:relative; }
         </div>
       </div>
       <div>
-        <p>Certificates expire — QLD's are the shortest at one to two years. We keep a record of your expiry date and reach out ahead of time, so your pool doesn't quietly slip out of compliance.</p>
+        <p>Certificates expire, QLD's are the shortest at one to two years. We keep a record of your expiry date and reach out ahead of time, so your pool doesn't quietly slip out of compliance.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Automatic expiry reminder before renewal is due</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Preferred pricing for returning clients</li>
@@ -1128,7 +1234,7 @@ section{ position:relative; }
       <div>
         <p class="eyebrow on-light">For Real Estate Agents &amp; Conveyancers</p>
         <h2 style="color:var(--navy-900); font-size:clamp(28px,3.4vw,40px); margin-top:14px;">Settlement dates don't move. Neither do we.</h2>
-        <p style="margin-top:18px; font-size:16px; color:var(--muted); max-width:52ch; line-height:1.7;">If a pool certificate is holding up a sale or lease, call rather than email — agent and conveyancer bookings get priority over general enquiries. Reports are written so a buyer, vendor or tenant can understand them without a phone call back to us.</p>
+        <p style="margin-top:18px; font-size:16px; color:var(--muted); max-width:52ch; line-height:1.7;">If a pool certificate is holding up a sale or lease, call rather than email, agent and conveyancer bookings get priority over general enquiries. Reports are written so a buyer, vendor or tenant can understand them without a phone call back to us.</p>
         <div class="hero-ctas" style="margin-top:26px;">
           <a class="spa-link btn btn-navy" href="#" data-page="contact">Book a Priority Inspection</a>
           <a href="tel:0449561102" class="btn btn-outline-light" style="border-color:var(--line); color:var(--navy-900);">Call 0449 561 102</a>
@@ -1137,15 +1243,15 @@ section{ position:relative; }
       <div class="credential-list">
         <div class="row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-          <p><strong>Same-week bookings where possible</strong> — tell us the settlement date up front.</p>
+          <p><strong>Same-week bookings where possible</strong>, tell us the settlement date up front.</p>
         </div>
         <div class="row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
-          <p><strong>Certificates lodged directly</strong> with the state register or council — not left for you to chase.</p>
+          <p><strong>Certificates lodged directly</strong> with the state register or council, not left for you to chase.</p>
         </div>
         <div class="row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <p><strong>Direct line to Kyle</strong> — no call centre or account manager in between.</p>
+          <p><strong>Direct line to Kyle</strong>, no call centre or account manager in between.</p>
         </div>
       </div>
     </div>
@@ -1190,7 +1296,7 @@ section{ position:relative; }
         <div class="amount">POA</div>
       </div>
     </div>
-    <p style="margin-top:20px; font-size:14px; color:var(--muted); max-width:70ch;">Travel surcharges may apply for regional and rural bookings outside standard routes — confirmed at time of quote.</p>
+    <p style="margin-top:20px; font-size:14px; color:var(--muted); max-width:70ch;">Travel surcharges may apply for regional and rural bookings outside standard routes, confirmed at time of quote.</p>
   </div>
 </section>
 
@@ -1204,19 +1310,19 @@ section{ position:relative; }
     <div style="max-width:820px;">
       <details class="faq-item" open>
         <summary>How much does an inspection cost?</summary>
-        <p class="a">A standard inspection and Form 23 Certificate is $350. If your pool doesn't pass the first time, re-inspection once the items are fixed is $190 — not a second full inspection fee. Rectification work is quoted separately.</p>
+        <p class="a">A standard inspection and Form 23 Certificate is $350. If your pool doesn't pass the first time, re-inspection once the items are fixed is $190, not a second full inspection fee. Rectification work is quoted separately.</p>
       </details>
       <details class="faq-item">
         <summary>What happens if my pool fails?</summary>
-        <p class="a">You'll get an itemised rectification report with clear timeframes. Once the items are fixed, we re-inspect just those items — you're not paying for a full second inspection.</p>
+        <p class="a">You'll get an itemised rectification report with clear timeframes. Once the items are fixed, we re-inspect just those items, you're not paying for a full second inspection.</p>
       </details>
       <details class="faq-item">
         <summary>Do I need a certificate to sell my property?</summary>
-        <p class="a">In all three states, a valid pool compliance certificate is generally required before you can sell or lease a property with a pool or spa. Rules and timeframes differ by state — get in touch and we'll confirm what applies to your situation.</p>
+        <p class="a">In all three states, a valid pool compliance certificate is generally required before you can sell or lease a property with a pool or spa. Rules and timeframes differ by state, get in touch and we'll confirm what applies to your situation.</p>
       </details>
       <details class="faq-item">
         <summary>How long is a certificate valid for?</summary>
-        <p class="a">It varies by state and pool type — for example QLD certificates run one or two years depending on whether the pool is shared. We track your expiry date and contact you ahead of renewal either way.</p>
+        <p class="a">It varies by state and pool type, for example QLD certificates run one or two years depending on whether the pool is shared. We track your expiry date and contact you ahead of renewal either way.</p>
       </details>
       <details class="faq-item">
         <summary>Do you travel to regional areas?</summary>
@@ -1230,7 +1336,7 @@ section{ position:relative; }
   <div class="container">
     <div>
       <h2>Not sure which service you need?</h2>
-      <p class="sub">Tell us about your pool and situation — we'll point you to the right service and a fair price.</p>
+      <p class="sub">Tell us about your pool and situation, we'll point you to the right service and a fair price.</p>
     </div>
     <div class="cta-actions">
       <a class="spa-link btn btn-coral" href="#" data-page="contact">Get In Touch</a>
@@ -1245,7 +1351,7 @@ section{ position:relative; }
   <div class="container">
     <p class="eyebrow">Where We Work</p>
     <h1>Coverage <em>across three states.</em></h1>
-    <p>Statewide across Queensland, focused coverage in New South Wales and Victoria. If your suburb isn't listed, call us — we're expanding regularly.</p>
+    <p>Statewide across Queensland, focused coverage in New South Wales and Victoria. If your suburb isn't listed, call us, we're expanding regularly.</p>
   </div>
 </section>
 
@@ -1265,7 +1371,7 @@ section{ position:relative; }
           <p class="eyebrow on-light">Queensland</p>
           <h3>Cairns to the Gold Coast</h3>
         </div>
-        <div class="count">Statewide — coastal &amp; inland</div>
+        <div class="count">Statewide &middot; coastal &amp; inland</div>
       </div>
       <div class="town-list">
         <span>Brisbane</span>
@@ -1282,7 +1388,7 @@ section{ position:relative; }
         <span>Townsville</span>
         <span>Cairns</span>
       </div>
-      <p class="region-note">Live coverage from Cairns in the Far North down to the Gold Coast, plus inland through Toowoomba. Our licensed inspector network keeps expanding ahead of demand, so if your region isn't listed yet, call and ask — regional and rural bookings are welcome.</p>
+      <p class="region-note">Live coverage from Cairns in the Far North down to the Gold Coast, plus inland through Toowoomba. Our licensed inspector network keeps expanding ahead of demand, so if your region isn't listed yet, call and ask, regional and rural bookings are welcome.</p>
     </div>
 
     <div class="region-block">
@@ -1344,7 +1450,7 @@ section{ position:relative; }
     <div class="two-col">
       <div>
         <p class="eyebrow on-light">Not Sure If We Cover You?</p>
-        <h2 style="color:var(--navy-900); font-size:clamp(30px,3.6vw,44px); margin-top:14px;">Ask us — regional bookings are common.</h2>
+        <h2 style="color:var(--navy-900); font-size:clamp(30px,3.6vw,44px); margin-top:14px;">Ask us, regional bookings are common.</h2>
         <p style="margin-top:18px; font-size:16px; color:rgba(11,20,32,0.68); max-width:52ch; line-height:1.7;">The lists above cover our regular routes, but we take bookings well outside them, particularly across regional Queensland. If you're unsure, the fastest way to check is a quick call or a message with your suburb.</p>
         <div class="hero-ctas" style="margin-top:28px;">
           <a class="spa-link btn btn-navy" href="#" data-page="contact">Check My Suburb</a>
@@ -1355,7 +1461,7 @@ section{ position:relative; }
         <div class="state-block" style="background:var(--navy-900);">
           <div class="code">Booking Tip</div>
           <h4 style="color:var(--paper);">Regional QLD routes</h4>
-          <p style="color:rgba(245,242,233,0.65);">We batch regional Queensland trips by region and week — book a little ahead of settlement or renewal deadlines where you can, and we'll fit you into the next run through your area.</p>
+          <p style="color:rgba(245,242,233,0.65);">We batch regional Queensland trips by region and week, book a little ahead of settlement or renewal deadlines where you can, and we'll fit you into the next run through your area.</p>
         </div>
       </div>
     </div>
@@ -1399,7 +1505,7 @@ section{ position:relative; }
         <p class="eyebrow on-light">The Short Version</p>
         <h2 style="color:var(--navy-900); font-size:clamp(30px,3.6vw,42px); margin-top:14px;">Straight answers, done properly.</h2>
         <p style="margin-top:20px; font-size:16px; color:rgba(11,20,32,0.7); line-height:1.75;">Kyle started Certified Pool Compliance after seeing how many pool owners, agents and builders were left confused by inconsistent inspections and paperwork that went nowhere. The business now operates across Queensland, New South Wales and Victoria, working to each state's specific pool safety framework rather than a one-size-fits-all checklist.</p>
-        <p style="margin-top:16px; font-size:16px; color:rgba(11,20,32,0.7); line-height:1.75;">The name is the promise: certified means certified — inspected properly, reported clearly, and lodged where it needs to be.</p>
+        <p style="margin-top:16px; font-size:16px; color:rgba(11,20,32,0.7); line-height:1.75;">The name is the promise: certified means certified, inspected properly, reported clearly, and lodged where it needs to be.</p>
         <div class="stat-row">
           <div class="s"><div class="n">3</div><div class="l">States operated in</div></div>
           <div class="s"><div class="n">1,000+</div><div class="l">Inspections completed</div></div>
@@ -1427,24 +1533,24 @@ section{ position:relative; }
     <div class="section-head">
       <p class="eyebrow on-light">Credentials</p>
       <h2>Qualifications &amp; registrations</h2>
-      <p>Update this list with Kyle's current licence numbers and memberships before publishing — placeholders are marked below.</p>
+      <p>Update this list with Kyle's current licence numbers and memberships before publishing, placeholders are marked below.</p>
     </div>
     <div class="credential-list">
       <div class="row">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <p><strong>Licensed Queensland Pool Safety Inspector</strong> — [insert QBCC licence number], 10+ years in the pool fencing industry, 1,000+ inspections completed</p>
+        <p><strong>Licensed Queensland Pool Safety Inspector</strong>, [insert QBCC licence number], 10+ years in the pool fencing industry, 1,000+ inspections completed</p>
       </div>
       <div class="row">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <p><strong>Accredited Pool Certifier, New South Wales</strong> — [insert accreditation number]</p>
+        <p><strong>Accredited Pool Certifier, New South Wales</strong>, [insert accreditation number]</p>
       </div>
       <div class="row">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <p><strong>Registered Building Surveyor / Inspector, Victoria</strong> — [insert registration number]</p>
+        <p><strong>Registered Building Surveyor / Inspector, Victoria</strong>, [insert registration number]</p>
       </div>
       <div class="row">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        <p><strong>Fully insured</strong> — public liability and professional indemnity cover current [insert insurer / policy detail if displaying publicly]</p>
+        <p><strong>Fully insured</strong>, public liability and professional indemnity cover current [insert insurer / policy detail if displaying publicly]</p>
       </div>
     </div>
   </div>
@@ -1453,8 +1559,8 @@ section{ position:relative; }
 <section class="section-pad-sm">
   <div class="container">
     <div class="quote-block">
-      <p>"Safe Pools Save Lives" isn't a slogan we picked because it sounded good — it's the whole reason this business exists.</p>
-      <cite>— Kyle Steel, Director</cite>
+      <p>"Safe Pools Save Lives" isn't a slogan we picked because it sounded good, it's the whole reason this business exists.</p>
+      <cite>Kyle Steel, Director</cite>
     </div>
   </div>
 </section>
@@ -1463,7 +1569,7 @@ section{ position:relative; }
   <div class="container">
     <div>
       <h2>Talk to Kyle directly</h2>
-      <p class="sub">No call centre, no account manager — you deal with the person doing the inspection.</p>
+      <p class="sub">No call centre, no account manager, you deal with the person doing the inspection.</p>
     </div>
     <div class="cta-actions">
       <a class="spa-link btn btn-coral" href="#" data-page="contact">Get In Touch</a>
@@ -1488,7 +1594,7 @@ section{ position:relative; }
 
       <div class="form-wrap">
         <h3 style="color:var(--paper); font-size:26px; text-transform:none; letter-spacing:0; margin-bottom:28px;">Send an enquiry</h3>
-        <form id="enquiry-form">
+        <form class="site-enquiry-form" id="enquiry-form">
           <div class="form-row">
             <div class="field">
               <label for="name">Full name</label>
@@ -1524,7 +1630,7 @@ section{ position:relative; }
                 <option value="Pre-purchase / pre-sale check">Pre-purchase / pre-sale check</option>
                 <option value="New pool or spa sign-off">New pool or spa sign-off</option>
                 <option value="Rectification follow-up">Rectification follow-up</option>
-                <option value="Not sure — need advice">Not sure — need advice</option>
+                <option value="Not sure, need advice">Not sure, need advice</option>
               </select>
             </div>
           </div>
@@ -1580,7 +1686,7 @@ section{ position:relative; }
 
         <div style="margin-top:44px; padding-top:32px; border-top:1px solid var(--line);">
           <p class="eyebrow on-light">Prefer to talk it through?</p>
-          <p style="margin-top:14px; font-size:15.5px; color:rgba(11,20,32,0.68); line-height:1.7;">Call Kyle directly on <strong style="color:var(--navy-900);">0449 561 102</strong> — real estate agents and conveyancers working to a settlement date should call rather than email, so we can lock in priority booking.</p>
+          <p style="margin-top:14px; font-size:15.5px; color:rgba(11,20,32,0.68); line-height:1.7;">Call Kyle directly on <strong style="color:var(--navy-900);">0449 561 102</strong>, real estate agents and conveyancers working to a settlement date should call rather than email, so we can lock in priority booking.</p>
         </div>
       </div>
 
@@ -1640,7 +1746,7 @@ section{ position:relative; }
 </footer>
 
 <script>
-// Certified Pool Compliance — shared behaviour
+// Certified Pool Compliance, shared behaviour
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -1655,8 +1761,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Contact form -> mailto handoff (static site, no backend)
-  const form = document.querySelector('#enquiry-form');
-  if (form) {
+  document.querySelectorAll('.site-enquiry-form').forEach((form) => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = new FormData(form);
@@ -1667,7 +1772,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const service = data.get('service') || '';
       const message = data.get('message') || '';
 
-      const subject = encodeURIComponent(`Pool inspection enquiry — ${name || 'New enquiry'}`);
+      const subject = encodeURIComponent(`Pool inspection enquiry, ${name || 'New enquiry'}`);
       const body = encodeURIComponent(
 `Name: ${name}
 Phone: ${phone}
@@ -1681,12 +1786,12 @@ ${message}`
 
       window.location.href = `mailto:kyle@cpc.com.au?subject=${subject}&body=${body}`;
 
-      const note = document.querySelector('#form-status');
+      const note = form.querySelector('.form-note');
       if (note) {
-        note.textContent = 'Opening your email app to send this through to Kyle — if nothing happens, email kyle@cpc.com.au directly.';
+        note.textContent = 'Opening your email app to send this through to Kyle, if nothing happens, email kyle@cpc.com.au directly.';
       }
     });
-  }
+  });
 
   // FAQ: close others when one opens (optional, keeps it tidy)
   document.querySelectorAll('.faq-item').forEach((item) => {

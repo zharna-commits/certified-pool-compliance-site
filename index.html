@@ -71,6 +71,7 @@ body{
   background:var(--bg);
   color:var(--ink);
   font-family:var(--font-body);
+  font-weight:500;
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
@@ -79,8 +80,8 @@ img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 ul{ margin:0; padding:0; list-style:none; }
 h1,h2,h3,h4{
-  margin:0; font-family:var(--font-display); font-weight:700;
-  letter-spacing:-0.01em; line-height:1.12;
+  margin:0; font-family:var(--font-display); font-weight:800;
+  letter-spacing:-0.02em; line-height:1.1;
 }
 h1 em, h2 em, h3 em{
   font-style:normal; font-weight:inherit;
@@ -145,7 +146,7 @@ button{ font-family:inherit; cursor:pointer; }
 .main-nav{ display:flex; align-items:center; gap:34px; }
 .main-nav a{
   font-family:var(--font-body);
-  font-weight:500;
+  font-weight:600;
   font-size:14.5px;
   color:rgba(246,248,251,0.72);
   position:relative;
@@ -323,7 +324,7 @@ section{ position:relative; }
   font-size:clamp(32px,4vw,48px);
   margin-top:16px;
   color:var(--navy-900);
-  font-weight:500;
+  font-weight:800;
 }
 .section-head p{
   font-size:17px;
@@ -540,7 +541,7 @@ section{ position:relative; }
 .cta-band .container{
   display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; position:relative; z-index:2;
 }
-.cta-band h2{ font-size:clamp(32px,4.4vw,50px); color:#f6f8fb; max-width:14ch; font-weight:500; }
+.cta-band h2{ font-size:clamp(32px,4.4vw,50px); color:#f6f8fb; max-width:14ch; font-weight:800; }
 .cta-band .sub{ font-size:15.5px; color:rgba(246,248,251,0.58); margin-top:14px; max-width:44ch; }
 .cta-actions{ display:flex; gap:16px; flex-wrap:wrap; }
 
@@ -617,7 +618,7 @@ section{ position:relative; }
   background:var(--navy-900); color:#f6f8fb; padding:60px 0 52px; position:relative; overflow:hidden;
 }
 .breadcrumb-hero .eyebrow{ margin-bottom:14px; }
-.breadcrumb-hero h1{ font-size:clamp(38px,5.2vw,60px); color:#f6f8fb; font-weight:500; }
+.breadcrumb-hero h1{ font-size:clamp(38px,5.2vw,60px); color:#f6f8fb; font-weight:800; }
 .breadcrumb-hero p{ margin-top:18px; font-size:17px; color:rgba(246,248,251,0.68); max-width:60ch; }
 
 .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
@@ -625,8 +626,27 @@ section{ position:relative; }
 .stat-row{ display:flex; gap:0; border-top:1px solid var(--line); margin-top:40px; }
 .stat-row .s{ flex:1; padding:24px 0 0; border-left:1px solid var(--line); padding-left:20px; }
 .stat-row .s:first-child{ border-left:none; padding-left:0; }
-.stat-row .s .n{ font-family:var(--font-display); font-size:38px; font-weight:600; color:var(--mint-500); }
+.stat-row .s .n{ font-family:var(--font-display); font-size:38px; font-weight:800; color:var(--mint-500); }
 .stat-row .s .l{ font-size:12.5px; letter-spacing:0.02em; color:var(--muted); margin-top:4px; }
+
+/* ---- Quiz ---- */
+.quiz-wrap{ max-width:640px; margin:32px auto 0; }
+.quiz-intro{ text-align:center; }
+.quiz-intro h2{ margin-top:14px; }
+.quiz-intro p{ margin:14px auto 0; }
+.quiz-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); padding:40px; margin-top:32px; }
+.quiz-progress{ height:6px; background:var(--line); border-radius:var(--radius-pill); overflow:hidden; margin-bottom:28px; }
+.quiz-progress-bar{ height:100%; width:20%; background:var(--grad-brand-strong); border-radius:var(--radius-pill); transition:width .3s ease; }
+.quiz-count{ font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:10px; }
+.quiz-step h3{ font-size:22px; color:var(--navy-900); font-weight:800; line-height:1.35; margin-bottom:24px; }
+.quiz-step p{ font-size:15.5px; color:var(--muted); line-height:1.7; margin-bottom:24px; }
+.quiz-options{ display:flex; gap:14px; flex-wrap:wrap; }
+.quiz-opt{ flex:1; min-width:140px; padding:18px 20px; border-radius:var(--radius-md); border:2px solid var(--line); background:var(--bg); font-family:var(--font-body); font-weight:700; font-size:15.5px; color:var(--navy-900); cursor:pointer; transition:all .2s ease; }
+.quiz-opt:hover{ border-color:var(--mint-400); background:var(--mint-100); transform:translateY(-2px); }
+.quiz-result-badge{ display:inline-block; padding:8px 18px; border-radius:var(--radius-pill); font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:16px; }
+.quiz-result-badge.good{ background:var(--mint-100); color:var(--mint-500); }
+.quiz-result-badge.bad{ background:rgba(255,95,126,0.14); color:var(--coral); }
+.quiz-fineprint{ font-size:12.5px; color:var(--muted); line-height:1.6; margin-top:-8px; }
 
 .credential-list{ display:flex; flex-direction:column; gap:14px; margin-top:8px; }
 .credential-list .row{
@@ -735,7 +755,7 @@ section{ position:relative; }
       <div>
         <p class="eyebrow">Licensed QLD, NSW &amp; VIC Pool Safety Inspections</p>
         <h1>Safe pools save lives. We make yours <em>compliant.</em></h1>
-        <p class="hero-lede">Independent pool safety inspections and compliance certificates for QLD, NSW and VIC, from Cairns to the Gold Coast, across Sydney and the Central Coast, and through Melbourne and Geelong.</p>
+        <p class="hero-lede">Independent pool safety inspections and compliance certificates for <strong>QLD</strong>, <strong>NSW</strong> and <strong>VIC</strong>, from Cairns to the Gold Coast, across Sydney and the Central Coast, and through Melbourne and Geelong.</p>
         <div class="hero-ctas">
           <a class="spa-link btn btn-coral btn-xl" href="#" data-page="contact">Book an Inspection</a>
           <a class="spa-link btn btn-outline-light" href="#" data-page="areas">Check My Area</a>
@@ -763,16 +783,22 @@ section{ position:relative; }
           </div>
           <div class="form-row">
             <div class="field">
+              <label for="hero-email">Email address</label>
+              <input type="email" id="hero-email" name="email" required>
+            </div>
+            <div class="field">
               <label for="hero-suburb">Suburb</label>
               <input type="text" id="hero-suburb" name="suburb" required>
             </div>
+          </div>
+          <div class="form-row">
             <div class="field">
-              <label for="hero-state">State</label>
+              <label for="hero-state"><strong>State</strong></label>
               <select id="hero-state" name="state" required>
                 <option value="">Select state</option>
-                <option value="QLD">Queensland</option>
-                <option value="NSW">New South Wales</option>
-                <option value="VIC">Victoria</option>
+                <option value="QLD">Queensland (QLD)</option>
+                <option value="NSW">New South Wales (NSW)</option>
+                <option value="VIC">Victoria (VIC)</option>
               </select>
             </div>
           </div>
@@ -823,10 +849,117 @@ section{ position:relative; }
   </div>
 </div>
 
+<!-- ============ COMPLIANCE QUIZ ============ -->
+<section class="section-pad" id="compliance-quiz">
+  <div class="container">
+    <div class="quiz-wrap">
+      <div class="quiz-intro">
+        <p class="eyebrow on-light">60-Second Check</p>
+        <h2 style="color:var(--navy-900); font-size:clamp(30px,3.6vw,44px);">Do you know if your pool is <em>compliant?</em></h2>
+        <p style="font-size:16px; color:rgba(11,20,32,0.68); max-width:52ch; line-height:1.7;">Answer five quick questions about your pool barrier. It's a general guide only, not a substitute for a licensed inspection, but it will tell you where you likely stand.</p>
+      </div>
+
+      <div class="quiz-card" id="quiz-card">
+        <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
+
+        <div class="quiz-step" data-step="1">
+          <p class="quiz-count">Question 1 of 5</p>
+          <h3>Is your pool fence at least 1200mm (1.2m) high, with no gaps greater than 100mm?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-answer="yes">Yes</button>
+            <button type="button" class="quiz-opt" data-answer="no">No / Not sure</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="2" style="display:none;">
+          <p class="quiz-count">Question 2 of 5</p>
+          <h3>Does your pool gate self-close and self-latch, opening away from the pool?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-answer="yes">Yes</button>
+            <button type="button" class="quiz-opt" data-answer="no">No / Not sure</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="3" style="display:none;">
+          <p class="quiz-count">Question 3 of 5</p>
+          <h3>Is a compliant CPR sign clearly displayed near the pool?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-answer="yes">Yes</button>
+            <button type="button" class="quiz-opt" data-answer="no">No / Not sure</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="4" style="display:none;">
+          <p class="quiz-count">Question 4 of 5</p>
+          <h3>Are all climbable objects, furniture, pot plants, trees, kept at least 900mm from the outside of the fence?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-answer="yes">Yes</button>
+            <button type="button" class="quiz-opt" data-answer="no">No / Not sure</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="5" style="display:none;">
+          <p class="quiz-count">Question 5 of 5</p>
+          <h3>Do you currently hold a valid, in-date pool safety certificate?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-opt" data-answer="yes">Yes</button>
+            <button type="button" class="quiz-opt" data-answer="no">No / Not sure</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="result" style="display:none;">
+          <div id="quiz-result-compliant" style="display:none;">
+            <span class="quiz-result-badge good">Looking good</span>
+            <h3>Your pool sounds like it is on the right track.</h3>
+            <p>Nice work, that is a strong sign. You will still need a licensed inspection to get an official compliance certificate, and small details are easy to miss without one.</p>
+          </div>
+          <div id="quiz-result-noncompliant" style="display:none;">
+            <span class="quiz-result-badge bad">Likely non-compliant</span>
+            <h3>Your pool may not meet current standards.</h3>
+            <p>Based on your answers, your barrier may not currently meet Australian pool safety requirements. That is fixable, and a licensed inspection will tell you exactly what needs to change.</p>
+          </div>
+          <button type="button" class="btn btn-coral btn-xl btn-block" id="quiz-book-btn">Book Your Pool Compliance Check</button>
+        </div>
+      </div>
+
+      <div class="form-wrap" id="quiz-lead-panel" style="display:none; margin-top:32px;">
+        <h3 style="font-size:20px; font-weight:800; margin-bottom:8px;">Book your inspection</h3>
+        <p class="panel-sub" style="font-size:14.5px; color:rgba(246,248,251,0.62); margin-bottom:24px; line-height:1.6;">Tell us your details and pick a preferred date. We will confirm a fixed price and availability.</p>
+        <form class="site-enquiry-form" id="quiz-enquiry-form">
+          <input type="hidden" name="quiz_result" id="quiz-result-input" value="">
+          <input type="hidden" name="service" value="Pool Safety Compliance Inspection">
+          <div class="form-row">
+            <div class="field"><label for="quiz-name">Full name</label><input type="text" id="quiz-name" name="name" required></div>
+            <div class="field"><label for="quiz-phone">Phone number</label><input type="tel" id="quiz-phone" name="phone" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="quiz-email">Email address</label><input type="email" id="quiz-email" name="email" required></div>
+            <div class="field"><label for="quiz-suburb">Suburb</label><input type="text" id="quiz-suburb" name="suburb" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="quiz-state"><strong>State</strong></label>
+              <select id="quiz-state" name="state" required>
+                <option value="">Select state</option>
+                <option value="QLD">Queensland (QLD)</option>
+                <option value="NSW">New South Wales (NSW)</option>
+                <option value="VIC">Victoria (VIC)</option>
+              </select>
+            </div>
+            <div class="field"><label for="quiz-date">Preferred inspection date</label><input type="date" id="quiz-date" name="preferred_date"></div>
+          </div>
+          <p class="quiz-fineprint" style="color:rgba(246,248,251,0.48);">We can't guarantee this exact date and time, we'll check availability and get back to you to confirm.</p>
+          <button type="submit" class="btn btn-coral btn-xl btn-block">Send My Booking Request</button>
+          <p class="form-note" id="quiz-form-status">No spam, no call centre.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="wave-divider">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#132038"/>
-    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef1f6"/>
+    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef2f9"/>
   </svg>
 </div>
 
@@ -840,8 +973,9 @@ section{ position:relative; }
         <p style="font-size:16.5px; color:rgba(11,20,32,0.68); margin-top:20px; max-width:52ch; line-height:1.7;">Nationally, backyard pools account for the majority of pool-related drowning deaths among young children, and half of all under-five drowning deaths happen in home swimming pools.<sup style="font-size:11px;">1</sup> A compliant fence, gate and CPR sign isn't paperwork for its own sake, it's the barrier between a backyard and a tragedy.</p>
         <p style="font-size:14px; color:rgba(11,20,32,0.45); margin-top:16px;">1. Royal Life Saving Society Australia, National Drowning Report 2025.</p>
         <div class="stat-row">
-          <div class="s"><div class="n">68%</div><div class="l">Of pool drownings occur in backyard pools</div></div>
+          <div class="s"><div class="n count-up" data-count-to="68" data-suffix="%">68%</div><div class="l">Of pool drownings occur in backyard pools</div></div>
           <div class="s"><div class="n">1&nbsp;in&nbsp;2</div><div class="l">Under-5 drowning deaths happen at home</div></div>
+          <div class="s"><div class="n count-up" data-count-to="15" data-suffix="">15</div><div class="l">Children under 5 who drown in Australia every year<sup style="font-size:9px;">1</sup></div></div>
         </div>
       </div>
       <div>
@@ -1055,7 +1189,7 @@ section{ position:relative; }
 <div class="wave-divider">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#16233b"/>
-    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef1f6"/>
+    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef2f9"/>
   </svg>
 </div>
 
@@ -1358,7 +1492,7 @@ section{ position:relative; }
 <div class="wave-divider">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#16233b"/>
-    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef1f6"/>
+    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef2f9"/>
   </svg>
 </div>
 
@@ -1494,7 +1628,7 @@ section{ position:relative; }
 <div class="wave-divider">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#16233b"/>
-    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef1f6"/>
+    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef2f9"/>
   </svg>
 </div>
 
@@ -1607,11 +1741,17 @@ section{ position:relative; }
           </div>
           <div class="form-row">
             <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
               <label for="suburb">Suburb</label>
               <input type="text" id="suburb" name="suburb" required>
             </div>
+          </div>
+          <div class="form-row">
             <div class="field">
-              <label for="state">State</label>
+              <label for="state"><strong>State</strong></label>
               <select id="state" name="state" required>
                 <option value="">Select state</option>
                 <option value="QLD">Queensland</option>
@@ -1695,6 +1835,117 @@ section{ position:relative; }
 </section>
 </div>
 
+<div class="spa-page" id="page-privacy" style="display:none;">
+<section class="breadcrumb-hero blueprint-bg">
+  <div class="container">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy policy</h1>
+    <p>How Certified Pool Compliance collects, uses and protects your personal information.</p>
+  </div>
+</section>
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#132038"/>
+    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef2f9"/>
+  </svg>
+</div>
+<section class="section-pad-sm">
+  <div class="container" style="max-width:820px;">
+    <div style="display:flex; flex-direction:column; gap:28px; font-size:15.5px; color:rgba(11,20,32,0.75); line-height:1.75;">
+      <p style="color:var(--muted); font-size:13.5px;">Last updated: [insert date]. This policy applies to certifiedpoolcompliance.com.au and to Certified Pool Compliance's handling of personal information under the Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).</p>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">What we collect</h3>
+        <p>When you submit an enquiry or booking form on this site, we collect your name, phone number, email address, suburb, state, the service you've requested and any details you choose to add in the message field. We do not collect payment card details through this website.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">How we use it</h3>
+        <p>We use this information only to respond to your enquiry, schedule and carry out your inspection, issue and lodge compliance certificates with the relevant state register or council, and send you renewal reminders ahead of certificate expiry. We do not sell or rent your personal information to third parties, and we do not use it for unrelated marketing without your consent.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Who we share it with</h3>
+        <p>Certificate and inspection details are shared with the relevant state authority or council register (QBCC Pool Safety Register in QLD, the NSW Swimming Pool Register, or the applicable Victorian council) where required to lodge a certificate. We may share limited details with a trusted trade referral only if you ask us to arrange rectification work. We do not otherwise disclose your information to third parties except where required by law.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Cookies and website data</h3>
+        <p>This website does not currently use analytics, advertising or tracking cookies. If that changes in future, this policy will be updated to describe what is collected and how to opt out.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Data security and retention</h3>
+        <p>We take reasonable steps to protect your personal information from misuse, loss and unauthorised access. We retain enquiry and certificate records for as long as reasonably necessary for compliance, record-keeping and legal obligations, then securely delete them.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Access, correction and complaints</h3>
+        <p>You can ask to access or correct the personal information we hold about you, or raise a privacy concern, by contacting us at <a href="mailto:kyle@cpc.com.au" style="color:var(--mint-500); text-decoration:underline;">kyle@cpc.com.au</a> or <a href="tel:0449561102" style="color:var(--mint-500); text-decoration:underline;">0449 561 102</a>. If you're not satisfied with our response, you can contact the Office of the Australian Information Commissioner (OAIC) at oaic.gov.au.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="spa-page" id="page-terms" style="display:none;">
+<section class="breadcrumb-hero blueprint-bg">
+  <div class="container">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms of use</h1>
+    <p>The terms that apply when you use this website or book an inspection with Certified Pool Compliance.</p>
+  </div>
+</section>
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#132038"/>
+    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef2f9"/>
+  </svg>
+</div>
+<section class="section-pad-sm">
+  <div class="container" style="max-width:820px;">
+    <div style="display:flex; flex-direction:column; gap:28px; font-size:15.5px; color:rgba(11,20,32,0.75); line-height:1.75;">
+      <p style="color:var(--muted); font-size:13.5px;">Last updated: [insert date]. Certified Pool Compliance ABN [insert ABN]. By using this website or booking a service, you agree to these terms.</p>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Our services</h3>
+        <p>We provide independent pool safety inspections, compliance certification and rectification advice in Queensland, New South Wales and Victoria. Prices listed on this site are current at time of publishing and are confirmed in writing before a booking is locked in. Travel surcharges may apply for regional and rural bookings outside standard routes.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Bookings and cancellations</h3>
+        <p>Bookings are confirmed once we agree a date, time and price with you. If you need to reschedule or cancel, please give us as much notice as possible. [Insert your cancellation and rescheduling policy, including any fee for late cancellation or no-show, before publishing.]</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Australian Consumer Law</h3>
+        <p>Nothing in these terms excludes, restricts or modifies any consumer guarantee, right or remedy under the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010) or any other law that cannot be lawfully excluded. Our services come with guarantees that cannot be excluded under the Australian Consumer Law. To the extent permitted by law, our liability for a failure to comply with a consumer guarantee is limited to resupplying the service or paying the cost of having it resupplied.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Inspection findings and certificates</h3>
+        <p>A pool safety inspection assesses compliance against the applicable state standard at the time of inspection only. It does not guarantee ongoing compliance if the barrier, gate or surrounds are later altered. Certificates are issued and lodged only where a pool is assessed as compliant, in line with the applicable state framework.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Website use and content</h3>
+        <p>Content on this website is provided for general information and does not constitute legal or professional advice about your specific pool or property. Suburb, pricing and coverage information is indicative and confirmed at time of booking. All content, branding and imagery on this site remain the property of Certified Pool Compliance unless otherwise credited.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Governing law</h3>
+        <p>These terms are governed by the laws of [insert state, e.g. Queensland], Australia, without regard to conflict of law principles.</p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--navy-900); font-size:22px; margin-bottom:10px;">Contact</h3>
+        <p>Questions about these terms can be sent to <a href="mailto:kyle@cpc.com.au" style="color:var(--mint-500); text-decoration:underline;">kyle@cpc.com.au</a> or <a href="tel:0449561102" style="color:var(--mint-500); text-decoration:underline;">0449 561 102</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -1735,6 +1986,8 @@ section{ position:relative; }
           <li><a href="tel:0449561102">0449 561 102</a></li>
           <li><a href="mailto:kyle@cpc.com.au">kyle@cpc.com.au</a></li>
           <li>QLD &middot; NSW &middot; VIC</li>
+          <li><a href="#" class="spa-link" data-page="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="spa-link" data-page="terms">Terms of Use</a></li>
         </ul>
       </div>
     </div>
@@ -1766,19 +2019,25 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const data = new FormData(form);
       const name = data.get('name') || '';
+      const email = data.get('email') || '';
       const suburb = data.get('suburb') || '';
       const state = data.get('state') || '';
       const phone = data.get('phone') || '';
       const service = data.get('service') || '';
       const message = data.get('message') || '';
+      const preferredDate = data.get('preferred_date') || '';
+      const quizResult = data.get('quiz_result') || '';
 
       const subject = encodeURIComponent(`Pool inspection enquiry, ${name || 'New enquiry'}`);
       const body = encodeURIComponent(
 `Name: ${name}
+Email: ${email}
 Phone: ${phone}
 Suburb: ${suburb}
 State: ${state}
-Service required: ${service}
+Service required: ${service}${preferredDate ? `
+Preferred date: ${preferredDate}` : ''}${quizResult ? `
+Quiz result: ${quizResult}` : ''}
 
 Message:
 ${message}`
@@ -1803,6 +2062,98 @@ ${message}`
       }
     });
   });
+
+  // Pool compliance quiz
+  const quizCard = document.getElementById('quiz-card');
+  if (quizCard) {
+    const steps = Array.from(quizCard.querySelectorAll('.quiz-step[data-step]'));
+    const questionSteps = steps.filter((s) => s.dataset.step !== 'result');
+    const resultStep = steps.find((s) => s.dataset.step === 'result');
+    const progressBar = document.getElementById('quiz-progress-bar');
+    const total = questionSteps.length;
+    let current = 0;
+    const answers = [];
+
+    function showStep(index) {
+      steps.forEach((s) => { s.style.display = 'none'; });
+      if (index < total) {
+        questionSteps[index].style.display = '';
+      } else if (resultStep) {
+        resultStep.style.display = '';
+      }
+    }
+
+    quizCard.addEventListener('click', (e) => {
+      const btn = e.target.closest('.quiz-opt');
+      if (!btn) return;
+      answers.push(btn.dataset.answer === 'yes');
+      current++;
+      if (progressBar) {
+        progressBar.style.width = Math.min(100, Math.round((current / total) * 100)) + '%';
+      }
+      if (current < total) {
+        showStep(current);
+      } else {
+        showStep(total);
+        const compliant = answers.every(Boolean);
+        const good = document.getElementById('quiz-result-compliant');
+        const bad = document.getElementById('quiz-result-noncompliant');
+        if (good) good.style.display = compliant ? '' : 'none';
+        if (bad) bad.style.display = compliant ? 'none' : '';
+        const resultInput = document.getElementById('quiz-result-input');
+        if (resultInput) {
+          resultInput.value = compliant
+            ? 'Quiz: self-assessed as likely compliant'
+            : 'Quiz: self-assessed as likely non-compliant';
+        }
+      }
+    });
+
+    const bookBtn = document.getElementById('quiz-book-btn');
+    const leadPanel = document.getElementById('quiz-lead-panel');
+    if (bookBtn && leadPanel) {
+      bookBtn.addEventListener('click', () => {
+        leadPanel.style.display = '';
+        leadPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
+
+  // Scroll-triggered stat count-up (cited, real annual figures, not a live counter)
+  const counters = document.querySelectorAll('.count-up[data-count-to]');
+  if (counters.length) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animateCount = (el) => {
+      const target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+      const suffix = el.getAttribute('data-suffix') || '';
+      if (reduceMotion) {
+        el.textContent = target + suffix;
+        return;
+      }
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    };
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach((el) => observer.observe(el));
+    } else {
+      counters.forEach(animateCount);
+    }
+  }
 
 });
 

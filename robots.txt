@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://certified-pool-compliance-site.pages.dev/sitemap.xml

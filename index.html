@@ -4,713 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certified Pool Compliance, Full Site Preview</title>
-<style>
-/* ============================================================
-   Certified Pool Compliance, brand stylesheet v4
-   Vivid, modern, pool-brand look, gradients, glow, depth
-   ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;1,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap');
-
-:root{
-  --navy-950:#0a1526;
-  --navy-900:#132038;
-  --navy-850:#16294a;
-  --navy-800:#1d3661;
-  --navy-700:#2b4d85;
-  --navy-600:#3a63a8;
-
-  --mint-500:#0fb894;
-  --mint-400:#1fe0b8;
-  --mint-300:#8ff5dd;
-  --mint-100:#e2fbf3;
-
-  --blue-600:#2f6bff;
-  --blue-500:#3b82f6;
-  --blue-400:#5da2ff;
-
-  --grad-brand:linear-gradient(135deg, var(--mint-400) 0%, var(--blue-500) 100%);
-  --grad-brand-strong:linear-gradient(135deg, var(--mint-500) 0%, var(--blue-600) 100%);
-  --grad-navy:linear-gradient(160deg, var(--navy-850) 0%, var(--navy-950) 100%);
-
-  --bg:#eef2f9;
-  --bg-alt:#e5edf9;
-  --surface:#ffffff;
-  --ink:#0d1626;
-  --muted:#5b6472;
-  --paper:#eef1f6;
-  --ivory:#e6ebf2;
-
-  --amber:#ff9f43;
-  --coral:#ff5f7e;
-
-  --line:rgba(16,24,39,0.10);
-  --line-soft:rgba(16,24,39,0.07);
-  --line-invert:rgba(255,255,255,0.16);
-
-  --font-display:'Poppins', -apple-system, sans-serif;
-  --font-body:'Inter', -apple-system, sans-serif;
-  --font-mono:'IBM Plex Mono', monospace;
-
-  --container:1180px;
-  --radius-sm:10px;
-  --radius-md:16px;
-  --radius-lg:22px;
-  --radius-pill:999px;
-
-  --shadow-soft:0 20px 44px -16px rgba(10,21,38,0.32);
-  --shadow-card:0 10px 26px -12px rgba(10,21,38,0.18);
-  --shadow-glow:0 14px 34px -10px rgba(47,107,255,0.45), 0 4px 14px -4px rgba(15,184,148,0.35);
-  --shadow-glow-lg:0 24px 60px -14px rgba(47,107,255,0.5), 0 8px 22px -6px rgba(15,184,148,0.4);
-}
-
-*,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--font-body);
-  font-weight:500;
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-img{ max-width:100%; display:block; }
-a{ color:inherit; text-decoration:none; }
-ul{ margin:0; padding:0; list-style:none; }
-h1,h2,h3,h4{
-  margin:0; font-family:var(--font-display); font-weight:800;
-  letter-spacing:-0.02em; line-height:1.1;
-}
-h1 em, h2 em, h3 em{
-  font-style:normal; font-weight:inherit;
-  background:var(--grad-brand-strong); -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-p{ margin:0; }
-strong, b{ font-family:var(--font-display); font-weight:800; }
-button{ font-family:inherit; cursor:pointer; }
-
-.container{ width:100%; max-width:var(--container); margin:0 auto; padding:0 28px; }
-
-/* ---------- Texture helpers ---------- */
-.blueprint-bg{
-  background-color:var(--navy-900);
-}
-.grain::after{ content:none; }
-
-/* ---------- Eyebrow / label ---------- */
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  font-family:var(--font-body);
-  font-weight:600;
-  font-size:12.5px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--mint-400);
-}
-.eyebrow::before{
-  content:"";
-  width:20px; height:1px;
-  background:var(--mint-400);
-}
-.eyebrow.on-light{ color:var(--mint-500); }
-.eyebrow.on-light::before{ background:var(--mint-500); }
-
-/* ============================================================
-   HEADER
-   ============================================================ */
-.site-header{
-  position:sticky; top:0; z-index:200;
-  background:rgba(22,35,59,0.92);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line-invert);
-}
-.site-header .container{
-  display:flex; align-items:center; justify-content:space-between;
-  height:80px;
-}
-.brand{ display:flex; align-items:center; gap:12px; }
-.brand-mark{ width:40px; height:40px; flex-shrink:0; }
-.brand-text{ display:flex; flex-direction:column; line-height:1.15; }
-.brand-text .b1{
-  font-family:var(--font-display); font-weight:600; font-size:19px;
-  color:var(--paper-on-dark,#f6f8fb); letter-spacing:-0.01em;
-}
-.brand-text .b2{
-  font-family:var(--font-body); font-weight:600; font-size:9.5px; letter-spacing:0.22em;
-  color:var(--mint-300); text-transform:uppercase; margin-top:4px;
-}
-
-.main-nav{ display:flex; align-items:center; gap:34px; }
-.main-nav a{
-  font-family:var(--font-body);
-  font-weight:600;
-  font-size:14.5px;
-  color:rgba(246,248,251,0.72);
-  position:relative;
-  padding:6px 0;
-  transition:color .2s ease;
-}
-.main-nav a:hover{ color:#f6f8fb; }
-.main-nav a.active{ color:var(--mint-300); }
-.main-nav a.active::after{
-  content:""; position:absolute; left:0; bottom:-4px; width:100%; height:2px;
-  border-radius:2px;
-  background:var(--mint-400);
-}
-
-.header-actions{ display:flex; align-items:center; gap:18px; }
-.header-phone{
-  display:flex; align-items:center; gap:8px;
-  font-family:var(--font-body); font-weight:500; font-size:14.5px; letter-spacing:0.01em;
-  color:#f6f8fb;
-}
-.header-phone svg{ width:15px; height:15px; stroke:var(--mint-400); }
-
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  font-family:var(--font-display); font-weight:800; font-size:14.5px; letter-spacing:0.005em;
-  padding:14px 28px;
-  border:1px solid transparent;
-  border-radius:var(--radius-pill);
-  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
-  white-space:nowrap;
-}
-.btn-coral{ background:var(--grad-brand-strong); color:#ffffff; box-shadow:var(--shadow-glow); }
-.btn-coral:hover{ transform:translateY(-3px) scale(1.02); box-shadow:var(--shadow-glow-lg); }
-.btn-outline-light{ border-color:var(--line-invert); color:#f6f8fb; }
-.btn-outline-light:hover{ border-color:var(--mint-400); color:var(--mint-300); transform:translateY(-2px); }
-.btn-navy{ background:var(--navy-900); color:#f6f8fb; }
-.btn-navy:hover{ background:var(--navy-700); transform:translateY(-2px); }
-.btn-block{ width:100%; }
-.btn-xl{
-  padding:22px 44px; font-size:18px; letter-spacing:0.01em;
-  border-radius:var(--radius-pill);
-}
-.btn-xl:hover{ transform:translateY(-4px) scale(1.03); }
-
-.nav-toggle{ display:none; }
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{
-  position:relative;
-  overflow:hidden;
-  color:#f6f8fb;
-  padding:64px 0 0;
-  min-height:92vh;
-  display:flex;
-  align-items:center;
-}
-.hero-media{ position:absolute; inset:0; z-index:0; background:var(--navy-950); }
-.hero-media video{ width:100%; height:100%; object-fit:cover; display:block; }
-.hero-media::after{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    linear-gradient(180deg, rgba(10,21,38,0.45) 0%, rgba(10,21,38,0.6) 45%, rgba(10,21,38,0.92) 100%),
-    linear-gradient(115deg, rgba(15,184,148,0.28) 0%, rgba(47,107,255,0.22) 45%, transparent 75%);
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr 0.95fr;
-  gap:44px;
-  align-items:center;
-  position:relative; z-index:2;
-  padding:56px 0 80px;
-  width:100%;
-}
-.hero h1{
-  font-size:clamp(40px,5.4vw,62px);
-  margin:20px 0 0;
-  color:#f6f8fb;
-  font-weight:800;
-  letter-spacing:-0.02em;
-}
-.hero-lede{
-  font-family:var(--font-body);
-  font-size:18.5px;
-  line-height:1.7;
-  color:rgba(246,248,251,0.8);
-  max-width:52ch;
-  margin:24px 0 34px;
-}
-.hero-ctas{ display:flex; gap:18px; flex-wrap:wrap; align-items:center; }
-.hero-microline{
-  display:flex; align-items:center; gap:10px; margin-top:26px;
-  font-size:13.5px; color:rgba(246,248,251,0.6);
-}
-.hero-microline svg{ width:16px; height:16px; stroke:var(--mint-400); flex-shrink:0; }
-
-/* Hero booking panel, floats over the video, this is the main top-fold conversion point */
-.hero-form-panel{
-  position:relative;
-  border-radius:var(--radius-lg);
-  border:1px solid rgba(255,255,255,0.22);
-  background:rgba(10,21,38,0.6);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  box-shadow:var(--shadow-glow-lg);
-  padding:38px 36px 34px;
-}
-.hero-form-panel::before{
-  content:"";
-  position:absolute; inset:0; border-radius:inherit; padding:1px;
-  background:var(--grad-brand); opacity:0.55;
-  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor; mask-composite:exclude;
-  pointer-events:none;
-}
-.hero-form-panel .eyebrow{ margin-bottom:4px; }
-.hero-form-panel h3{
-  font-size:23px; font-weight:700; color:#f6f8fb; margin-top:10px;
-}
-.hero-form-panel > p.panel-sub{
-  font-size:14.5px; color:rgba(246,248,251,0.72); margin-top:8px; line-height:1.6;
-}
-.hero-form-panel form{ margin-top:22px; }
-.hero-form-panel .btn-block{ margin-top:6px; }
-.hero-form-panel .form-note{ text-align:center; }
-
-/* Ladder watermark */
-.hero .ladder-watermark{ display:none; }
-
-/* ============================================================
-   CREDENTIAL MARQUEE
-   ============================================================ */
-.credential-marquee{
-  position:relative; z-index:3;
-  overflow:hidden;
-  background:var(--grad-navy);
-  padding:22px 0;
-  border-top:1px solid var(--line-invert);
-  border-bottom:1px solid var(--line-invert);
-}
-.marquee-track{
-  display:flex; width:max-content;
-  animation:marquee-scroll 24s linear infinite;
-}
-.marquee-set{ display:flex; align-items:center; gap:52px; padding-right:52px; flex-shrink:0; }
-.marquee-item{
-  display:flex; align-items:center; gap:12px;
-  font-family:var(--font-display); font-weight:700; font-size:21px;
-  letter-spacing:0.005em; color:#f6f8fb; white-space:nowrap;
-}
-.marquee-item svg{ width:24px; height:24px; stroke:var(--mint-400); flex-shrink:0; }
-.marquee-dot{ width:7px; height:7px; border-radius:50%; background:var(--mint-400); opacity:0.65; margin:0 6px; }
-@keyframes marquee-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-@media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
-
-/* ============================================================
-   WAVE DIVIDER
-   ============================================================ */
-.wave-divider{ display:block; width:100%; line-height:0; }
-.wave-divider svg{ width:100%; height:auto; display:block; }
-
-/* ============================================================
-   SECTION scaffolding
-   ============================================================ */
-section{ position:relative; }
-.section-pad{ padding:104px 0; }
-.section-pad-sm{ padding:64px 0; }
-.section-head{
-  max-width:640px;
-  margin-bottom:52px;
-}
-.section-head h2{
-  font-size:clamp(32px,4vw,48px);
-  margin-top:16px;
-  color:var(--navy-900);
-  font-weight:800;
-}
-.section-head p{
-  font-size:17px;
-  color:var(--muted);
-  margin-top:18px;
-  max-width:56ch;
-}
-.on-dark .section-head h2{ color:#f6f8fb; }
-.on-dark .section-head p{ color:rgba(246,248,251,0.65); }
-
-/* ============================================================
-   SERVICES GRID (home teaser + services page)
-   ============================================================ */
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.service-card{
-  display:block;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:var(--radius-lg);
-  padding:34px 30px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:var(--shadow-card);
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.service-card::before{
-  content:""; position:absolute; top:0; left:0; right:0; height:4px;
-  background:var(--grad-brand); opacity:0; transition:opacity .25s ease;
-}
-.service-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-glow); }
-.service-card:hover::before{ opacity:1; }
-.service-card .icon-badge{
-  width:52px; height:52px; border-radius:50%;
-  background:var(--mint-100); display:flex; align-items:center; justify-content:center;
-  margin-bottom:20px;
-}
-.service-card .icon-badge svg{ width:24px; height:24px; stroke:var(--mint-500); }
-.service-card .idx{ display:none; }
-.service-card h3{
-  font-family:var(--font-display); font-size:22px; font-weight:600;
-  color:var(--navy-900); margin-top:0;
-}
-.service-card p{
-  font-size:14.5px; color:var(--muted); margin-top:12px; line-height:1.65;
-}
-.service-card .tag-label{
-  display:block; margin-top:18px; font-size:11.5px; font-weight:600; letter-spacing:0.08em;
-  text-transform:uppercase; color:var(--mint-500);
-}
-.service-card svg{ stroke:var(--navy-800); }
-
-.service-detail{
-  display:grid;
-  grid-template-columns:0.9fr 1.1fr;
-  gap:56px;
-  align-items:start;
-  padding:52px 0;
-  border-top:1px solid var(--line);
-}
-.service-detail:last-child{ border-bottom:1px solid var(--line); }
-.service-detail .tag{
-  font-family:var(--font-body); font-weight:600; font-size:12px; color:var(--mint-500); letter-spacing:0.1em; text-transform:uppercase;
-}
-.service-detail h3{
-  font-size:clamp(24px,2.6vw,32px); color:var(--navy-900); margin-top:12px; font-weight:600;
-}
-.service-detail .meta{
-  display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;
-}
-.service-detail .meta div{
-  font-family:var(--font-body); font-weight:600; font-size:11.5px; letter-spacing:0.04em; text-transform:uppercase; color:var(--navy-700);
-  background:var(--bg-alt); border-radius:var(--radius-pill); padding:7px 14px;
-}
-.service-detail p{ font-size:16px; color:var(--muted); margin-top:0; }
-.service-detail ul{ margin-top:20px; display:flex; flex-direction:column; gap:12px; }
-.service-detail ul li{
-  display:flex; gap:12px; font-size:15px; color:rgba(16,24,39,0.82);
-}
-.service-detail ul li svg{ width:18px; height:18px; stroke:var(--mint-500); flex-shrink:0; margin-top:2px; }
-
-/* ============================================================
-   PRICING PANEL
-   ============================================================ */
-.pricing-panel{
-  display:grid; grid-template-columns:1fr 1fr; gap:24px;
-}
-.price-card{
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg);
-  padding:32px; box-shadow:var(--shadow-card);
-}
-.price-card h4{ font-size:20px; font-weight:600; color:var(--navy-900); }
-.price-card p{ font-size:14.5px; color:var(--muted); margin-top:10px; line-height:1.65; }
-.price-card .price-tag{
-  font-family:var(--font-display); font-size:20px; font-weight:700;
-  color:var(--navy-900); margin-top:16px; display:block;
-}
-.price-card .price-tag small{ font-size:13px; font-weight:500; color:var(--muted); }
-
-.price-list{ border-top:1px solid var(--line); }
-.price-row{
-  display:flex; justify-content:space-between; align-items:baseline; gap:24px;
-  padding:22px 0; border-bottom:1px solid var(--line);
-}
-.price-row .desc h4{ font-size:17px; font-weight:700; color:var(--navy-900); }
-.price-row .desc p{ font-size:14px; color:var(--muted); margin-top:6px; max-width:52ch; }
-.price-row .amount{
-  font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--navy-900);
-  white-space:nowrap;
-}
-.price-row .amount small{ font-size:13px; font-weight:500; color:var(--muted); }
-
-/* ============================================================
-   STATE LEGISLATION STRIP
-   ============================================================ */
-.state-strip{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
-}
-.state-block{
-  background:var(--navy-850,#1b2c48); border-radius:var(--radius-lg); padding:32px 28px;
-  border:1px solid rgba(255,255,255,0.06);
-}
-.state-block .code{ font-family:var(--font-body); font-weight:600; color:var(--mint-400); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; }
-.state-block h4{ font-size:24px; color:#f6f8fb; margin-top:10px; font-weight:600; }
-.state-block p{ font-size:14px; color:rgba(246,248,251,0.62); margin-top:12px; line-height:1.65; }
-
-/* ============================================================
-   AREAS PAGE
-   ============================================================ */
-.region-block{ padding:56px 0; border-top:1px solid var(--line); }
-.region-head{
-  display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;
-  margin-bottom:30px;
-}
-.region-head h3{
-  font-size:clamp(28px,3.6vw,42px); color:var(--navy-900); font-weight:600;
-}
-.region-head .count{
-  font-family:var(--font-body); font-weight:600; font-size:12.5px; color:var(--mint-500); letter-spacing:0.08em; text-transform:uppercase;
-}
-.town-list{
-  display:flex; flex-wrap:wrap; gap:10px;
-}
-.town-list span{
-  display:block; padding:10px 18px; border-radius:var(--radius-pill);
-  background:var(--surface); border:1px solid var(--line);
-  font-family:var(--font-body); font-size:13.5px; font-weight:500; color:var(--navy-800);
-}
-.region-note{
-  margin-top:26px; font-size:15px; color:var(--muted); max-width:70ch;
-}
-
-/* ============================================================
-   PROCESS STEPS
-   ============================================================ */
-.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-.step{
-  position:relative; padding:30px 24px 26px;
-  background:rgba(255,255,255,0.03); border:1px solid var(--line-invert); border-radius:var(--radius-lg);
-}
-.on-light .step{ background:var(--surface); border-color:var(--line); box-shadow:var(--shadow-card); }
-.step::before{
-  content:attr(data-n);
-  font-family:var(--font-display); font-size:13px; font-weight:700; letter-spacing:0.06em;
-  color:var(--mint-400);
-  display:block; margin-bottom:14px;
-}
-.step h4{ font-size:19px; color:#f6f8fb; font-weight:600; margin-top:0; }
-.on-light .step h4{ color:var(--navy-900); }
-.step p{ font-size:14.5px; color:rgba(246,248,251,0.6); margin-top:10px; line-height:1.6; }
-.on-light .step p{ color:var(--muted); }
-
-/* ============================================================
-   TESTIMONIAL / QUOTE
-   ============================================================ */
-.quote-block{
-  border-left:3px solid var(--mint-400);
-  padding-left:32px;
-  max-width:760px;
-}
-.quote-block p{
-  font-family:var(--font-display); font-weight:600; font-style:normal;
-  font-size:clamp(20px,2.2vw,26px); line-height:1.45; color:var(--navy-900);
-}
-.review-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.review-card{
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg);
-  padding:26px; box-shadow:var(--shadow-card);
-}
-.review-card .stars{ color:var(--mint-500); font-size:15px; letter-spacing:2px; }
-.review-card p{ font-size:14.5px; color:rgba(16,24,39,0.8); margin-top:14px; line-height:1.65; }
-.review-card cite{
-  display:block; margin-top:16px; font-style:normal; font-weight:600; font-size:13px; color:var(--navy-900);
-}
-.review-card cite span{ display:block; font-weight:400; color:var(--muted); font-size:12.5px; margin-top:2px; }
-.quote-block cite{
-  display:block; margin-top:18px; font-style:normal;
-  font-family:var(--font-body); font-weight:600; font-size:13px; letter-spacing:0.04em; text-transform:uppercase; color:var(--navy-700);
-}
-
-/* ============================================================
-   CTA BAND
-   ============================================================ */
-.cta-band{
-  background:var(--navy-950);
-  color:#f6f8fb;
-  padding:88px 0;
-  position:relative;
-  overflow:hidden;
-}
-.cta-band .container{
-  display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; position:relative; z-index:2;
-}
-.cta-band h2{ font-size:clamp(32px,4.4vw,50px); color:#f6f8fb; max-width:14ch; font-weight:800; }
-.cta-band .sub{ font-size:15.5px; color:rgba(246,248,251,0.58); margin-top:14px; max-width:44ch; }
-.cta-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.site-footer{ background:var(--navy-950); color:rgba(246,248,251,0.62); padding-top:72px; }
-.footer-grid{
-  display:grid; grid-template-columns:1.4fr 0.8fr 0.8fr 1fr; gap:48px;
-  padding-bottom:56px; border-bottom:1px solid var(--line-invert);
-}
-.footer-brand .brand{ margin-bottom:18px; }
-.footer-brand p{ font-size:14px; line-height:1.7; max-width:38ch; color:rgba(246,248,251,0.5); }
-.footer-col h5{
-  font-family:var(--font-body); font-weight:600; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase;
-  color:var(--mint-300); margin-bottom:18px;
-}
-.footer-col ul{ display:flex; flex-direction:column; gap:11px; }
-.footer-col a{ font-size:14px; color:rgba(246,248,251,0.62); transition:color .2s ease; }
-.footer-col a:hover{ color:#f6f8fb; }
-.footer-bottom{
-  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-  padding:26px 0; font-size:12px; letter-spacing:0.01em; color:rgba(246,248,251,0.38);
-}
-
-/* ============================================================
-   FORMS (contact page)
-   ============================================================ */
-.form-wrap{
-  background:var(--navy-900);
-  color:#f6f8fb;
-  padding:44px;
-  border-radius:var(--radius-lg);
-  position:relative;
-  box-shadow:var(--shadow-soft);
-}
-.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; }
-.field{ display:flex; flex-direction:column; gap:8px; }
-.field.full{ grid-column:1 / -1; }
-.field label{
-  font-family:var(--font-body); font-weight:600; font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mint-300);
-}
-.field input, .field select, .field textarea{
-  background:rgba(12,23,40,0.55);
-  border:1px solid var(--line-invert);
-  color:#f6f8fb;
-  padding:13px 16px;
-  font-family:var(--font-body); font-size:15px;
-  border-radius:var(--radius-md);
-}
-.field input:focus, .field select:focus, .field textarea:focus{
-  outline:none; border-color:var(--mint-400);
-}
-.field textarea{ resize:vertical; min-height:110px; }
-.form-note{ font-size:12.5px; color:rgba(246,248,251,0.48); margin-top:16px; line-height:1.6; }
-
-.contact-info-list{ display:flex; flex-direction:column; gap:22px; }
-.contact-info-list .item{
-  display:flex; gap:16px; align-items:flex-start;
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg);
-  padding:22px 24px; box-shadow:var(--shadow-card);
-}
-.contact-info-list svg{ width:22px; height:22px; stroke:var(--mint-500); flex-shrink:0; margin-top:3px; }
-.contact-info-list h5{
-  font-family:var(--font-body); font-weight:600; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--navy-700);
-}
-.contact-info-list .val{ font-size:18px; color:var(--navy-900); margin-top:4px; font-weight:600; }
-.contact-info-list .val a:hover{ color:var(--mint-500); }
-
-/* ============================================================
-   MISC PAGE ELEMENTS
-   ============================================================ */
-.breadcrumb-hero{
-  background:var(--navy-900); color:#f6f8fb; padding:60px 0 52px; position:relative; overflow:hidden;
-}
-.breadcrumb-hero .eyebrow{ margin-bottom:14px; }
-.breadcrumb-hero h1{ font-size:clamp(38px,5.2vw,60px); color:#f6f8fb; font-weight:800; }
-.breadcrumb-hero p{ margin-top:18px; font-size:17px; color:rgba(246,248,251,0.68); max-width:60ch; }
-
-.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
-.two-col.reverse{ grid-template-columns:1fr 1fr; }
-.stat-row{ display:flex; gap:0; border-top:1px solid var(--line); margin-top:40px; }
-.stat-row .s{ flex:1; padding:24px 0 0; border-left:1px solid var(--line); padding-left:20px; }
-.stat-row .s:first-child{ border-left:none; padding-left:0; }
-.stat-row .s .n{ font-family:var(--font-display); font-size:38px; font-weight:800; color:var(--mint-500); }
-.stat-row .s .l{ font-size:12.5px; letter-spacing:0.02em; color:var(--muted); margin-top:4px; }
-
-/* ---- Quiz ---- */
-.quiz-wrap{ max-width:640px; margin:32px auto 0; }
-.quiz-intro{ text-align:center; }
-.quiz-intro h2{ margin-top:14px; }
-.quiz-intro p{ margin:14px auto 0; }
-.quiz-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); padding:40px; margin-top:32px; }
-.quiz-progress{ height:6px; background:var(--line); border-radius:var(--radius-pill); overflow:hidden; margin-bottom:28px; }
-.quiz-progress-bar{ height:100%; width:20%; background:var(--grad-brand-strong); border-radius:var(--radius-pill); transition:width .3s ease; }
-.quiz-count{ font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:10px; }
-.quiz-step h3{ font-size:22px; color:var(--navy-900); font-weight:800; line-height:1.35; margin-bottom:24px; }
-.quiz-step p{ font-size:15.5px; color:var(--muted); line-height:1.7; margin-bottom:24px; }
-.quiz-options{ display:flex; gap:14px; flex-wrap:wrap; }
-.quiz-opt{ flex:1; min-width:140px; padding:18px 20px; border-radius:var(--radius-md); border:2px solid var(--line); background:var(--bg); font-family:var(--font-body); font-weight:700; font-size:15.5px; color:var(--navy-900); cursor:pointer; transition:all .2s ease; }
-.quiz-opt:hover{ border-color:var(--mint-400); background:var(--mint-100); transform:translateY(-2px); }
-.quiz-result-badge{ display:inline-block; padding:8px 18px; border-radius:var(--radius-pill); font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:16px; }
-.quiz-result-badge.good{ background:var(--mint-100); color:var(--mint-500); }
-.quiz-result-badge.bad{ background:rgba(255,95,126,0.14); color:var(--coral); }
-.quiz-fineprint{ font-size:12.5px; color:var(--muted); line-height:1.6; margin-top:-8px; }
-
-.credential-list{ display:flex; flex-direction:column; gap:14px; margin-top:8px; }
-.credential-list .row{
-  display:flex; gap:18px; padding:20px 22px; align-items:flex-start;
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow-card);
-}
-.credential-list .row svg{ width:20px; height:20px; stroke:var(--mint-500); flex-shrink:0; margin-top:3px; }
-.credential-list .row p{ font-size:15px; color:rgba(16,24,39,0.78); }
-.credential-list .row strong{ display:block; color:var(--navy-900); font-size:15.5px; margin-bottom:3px; }
-
-.faq-item{ border-top:1px solid var(--line); padding:24px 0; }
-.faq-item summary{
-  cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:20px;
-  font-family:var(--font-display); font-size:19px; color:var(--navy-900); font-weight:600;
-}
-.faq-item summary::-webkit-details-marker{ display:none; }
-.faq-item summary::after{ content:"+"; font-family:var(--font-body); font-weight:400; font-size:24px; color:var(--mint-500); flex-shrink:0; }
-.faq-item[open] summary::after{ content:"\2212"; }
-.faq-item .a{ font-size:15px; color:var(--muted); margin-top:14px; max-width:70ch; line-height:1.65; }
-
-.map-mark{ font-family:var(--font-body); font-size:11px; }
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width:980px){
-  .hero{ min-height:auto; padding:40px 0 0; }
-  .hero-grid{ grid-template-columns:1fr; gap:32px; padding:32px 0 56px; }
-  .hero-form-panel{ order:-1; padding:30px 26px; }
-  .service-grid{ grid-template-columns:repeat(2,1fr); }
-  .review-grid{ grid-template-columns:1fr; }
-  .footer-grid{ grid-template-columns:1fr 1fr; }
-  .steps{ grid-template-columns:repeat(2,1fr); }
-  .state-strip{ grid-template-columns:1fr; }
-  .service-detail{ grid-template-columns:1fr; gap:26px; }
-  .two-col{ grid-template-columns:1fr; gap:36px; }
-  .pricing-panel{ grid-template-columns:1fr; }
-  .price-row{ flex-direction:column; gap:6px; }
-}
-@media (max-width:760px){
-  .main-nav{ display:none; }
-  .main-nav.nav-open{
-    display:flex; flex-direction:column; gap:22px;
-    position:absolute; top:80px; left:0; right:0;
-    background:var(--navy-950); border-bottom:1px solid var(--line-invert);
-    padding:28px;
-  }
-  .nav-toggle{
-    display:flex; flex-direction:column; gap:5px; background:none; border:none; padding:8px;
-  }
-  .nav-toggle span{ width:22px; height:2px; background:#f6f8fb; border-radius:2px; }
-  .header-phone{ display:none; }
-  .service-grid{ grid-template-columns:1fr; }
-  .footer-grid{ grid-template-columns:1fr 1fr; gap:32px; }
-  .form-row{ grid-template-columns:1fr; }
-  .cta-band .container{ flex-direction:column; align-items:flex-start; }
-  .marquee-item{ font-size:16px; }
-}
-@media (max-width:560px){
-  .footer-grid{ grid-template-columns:1fr; }
-}
-
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -732,7 +26,8 @@ section{ position:relative; }
       <a href="#" class="spa-link" data-page="services">Pool Safety Certificates</a>
       <a href="#" class="spa-link" data-page="services" data-anchor="for-agents">For Agents</a>
       <a href="#" class="spa-link" data-page="areas">Service Areas</a>
-      <a href="#" class="spa-link" data-page="services" data-anchor="faq">FAQ</a>
+      <a href="/reviews">Reviews</a>
+      <a href="/blog">Guides</a>
       <a href="#" class="spa-link" data-page="about">About</a>
     </nav>
     <div class="header-actions">
@@ -957,13 +252,6 @@ section{ position:relative; }
   </div>
 </section>
 
-<div class="wave-divider">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 30 C 240 60, 480 0, 720 30 C 960 60, 1200 0, 1440 30 L1440 0 L0 0 Z" fill="#132038"/>
-    <path d="M0 40 C 240 10, 480 60, 720 30 C 960 0, 1200 60, 1440 30 L1440 60 L0 60 Z" fill="#eef2f9"/>
-  </svg>
-</div>
-
 <!-- ============ WHY IT MATTERS ============ -->
 <section class="section-pad">
   <div class="container">
@@ -1141,38 +429,23 @@ section{ position:relative; }
     <div class="section-head" style="margin-bottom:32px;">
       <p class="eyebrow on-light">Client Reviews</p>
       <h2>What clients say</h2>
-      <p>Swap these three for your real Google reviews before publishing, don't leave placeholder quotes live.</p>
-    </div>
-    <div class="review-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>[Insert a real client review here, what they needed, how it went, any specific detail worth quoting.]</p>
-        <cite>[Client name]<span>[Suburb]</span></cite>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>[Insert a real client review here.]</p>
-        <cite>[Client name]<span>[Suburb]</span></cite>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>[Insert a real client review here.]</p>
-        <cite>[Client name]<span>[Suburb]</span></cite>
-      </div>
+      <p>Rated five stars by homeowners, landlords and agents across Sydney, the Central Coast, Newcastle and the Illawarra.</p>
     </div>
   </div>
+  <div class="reviews-marquee" id="reviews-marquee" aria-label="Client reviews"></div>
 </section>
 
-<!-- ============ CTA BAND ============ -->
-<section class="cta-band blueprint-bg">
+<!-- ============ MEGA CTA ============ -->
+<section class="mega-cta">
+  <div class="float-blob" style="width:420px; height:420px; left:-120px; top:-80px; background:radial-gradient(circle, rgba(31,224,184,0.5), transparent 70%);"></div>
+  <div class="float-blob" style="width:520px; height:520px; right:-160px; bottom:-140px; background:radial-gradient(circle, rgba(47,107,255,0.5), transparent 70%); animation-delay:-8s;"></div>
   <div class="container">
-    <div>
-      <h2>Ready to get your pool certified?</h2>
-      <p class="sub">Book an inspection in your area, or call Kyle directly to talk through what you need.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="spa-link btn btn-coral" href="#" data-page="contact">Book an Inspection</a>
-      <a href="tel:0449561102" class="btn btn-outline-light">Call 0449 561 102</a>
+    <p class="eyebrow">Ready when you are</p>
+    <h2>Get your Pool <em>Certified</em> now</h2>
+    <p class="sub">Fixed price confirmed before we book, inspection completed on site, and your certificate lodged for you across QLD, NSW and VIC.</p>
+    <div class="mega-actions">
+      <a class="spa-link btn btn-coral btn-mega" href="#" data-page="contact">Get your Pool Certified now</a>
+      <a href="tel:0449561102" class="btn btn-outline-light btn-xl">Call 0449 561 102</a>
     </div>
   </div>
 </section>
@@ -1968,6 +1241,8 @@ section{ position:relative; }
           <li><a href="#" class="spa-link" data-page="home">Home</a></li>
           <li><a href="#" class="spa-link" data-page="services">Pool Safety Certificates</a></li>
           <li><a href="#" class="spa-link" data-page="areas">Service Areas</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/blog">Guides &amp; Articles</a></li>
           <li><a href="#" class="spa-link" data-page="about">About</a></li>
           <li><a href="#" class="spa-link" data-page="contact">Contact</a></li>
         </ul>
@@ -1975,10 +1250,29 @@ section{ position:relative; }
       <div class="footer-col">
         <h5>Services</h5>
         <ul>
-          <li><a href="#" class="spa-link" data-page="services" data-anchor="for-agents">For Agents</a></li>
-          <li><a href="#" class="spa-link" data-page="services" data-anchor="rectification">Rectification Reports</a></li>
-          <li><a href="#" class="spa-link" data-page="services" data-anchor="pre-purchase">Pre-Purchase Checks</a></li>
-          <li><a href="#" class="spa-link" data-page="services" data-anchor="new-builds">New Pool Sign-Off</a></li>
+          <li><a href="/pool-compliance-inspections">Pool Compliance Inspections</a></li>
+          <li><a href="/swimming-pool-certificates-of-compliance">Certificates of Compliance</a></li>
+          <li><a href="/pool-fence-inspections">Pool Fence Inspections</a></li>
+          <li><a href="/spa-barrier-inspections">Spa Barrier Inspections</a></li>
+          <li><a href="/pre-sale-pool-compliance-inspections">Pre Sale Inspections</a></li>
+          <li><a href="/rental-property-pool-compliance">Rental Property Compliance</a></li>
+          <li><a href="/real-estate-property-manager-inspections">Agent &amp; PM Inspections</a></li>
+          <li><a href="/strata-shared-pool-inspections">Strata &amp; Shared Pools</a></li>
+          <li><a href="/pool-reinspections">Pool Reinspections</a></li>
+          <li><a href="/pool-barrier-rectification-advice">Rectification Advice</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Locations</h5>
+        <ul>
+          <li><a href="/pool-compliance-inspections-sydney">Sydney</a></li>
+          <li><a href="/pool-compliance-inspections-northern-beaches">Northern Beaches</a></li>
+          <li><a href="/pool-compliance-inspections-central-coast">Central Coast</a></li>
+          <li><a href="/pool-compliance-inspections-parramatta">Parramatta</a></li>
+          <li><a href="/pool-compliance-inspections-sutherland-shire">Sutherland Shire</a></li>
+          <li><a href="/queensland">Queensland</a></li>
+          <li><a href="/nsw">New South Wales</a></li>
+          <li><a href="/victoria">Victoria</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2187,8 +1481,195 @@ document.addEventListener('DOMContentLoaded', function() {
     showPage(link.dataset.page, link.dataset.anchor);
   });
   window.showPage = showPage;
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('page')) { showPage(params.get('page'), params.get('anchor') || undefined); }
 });
 
+</script>
+<script>
+// ============ Depth & motion layer: reviews marquee, reveals, tilt, parallax ============
+document.addEventListener('DOMContentLoaded', function() {
+  var REVIEWS = [
+    ["Sarah M","Sydney","Certified Pool Compliance made the whole process simple. The inspector arrived on time, explained everything clearly and sent our certificate through quickly."],
+    ["Daniel R","Newcastle","Very professional service from start to finish. We knew exactly what needed fixing and there were no surprise costs."],
+    ["Michelle T","Central Coast","Friendly, reliable and easy to deal with. Our pool inspection was completed quickly and the report was very clear."],
+    ["James P","Parramatta","Great communication and excellent service. They helped us understand the compliance requirements without making it complicated."],
+    ["Emma L","Northern Beaches","The inspector was knowledgeable and thorough. We received practical advice and had our pool certified without any stress."],
+    ["Mark B","Penrith","Fast response and very professional. I would recommend Certified Pool Compliance to any pool owner."],
+    ["Rebecca S","Wollongong","We needed a certificate before renting out our property. The team organised everything quickly and kept us updated."],
+    ["Andrew K","Sutherland Shire","A smooth and straightforward experience. The inspector was polite, helpful and clearly knew what he was doing."],
+    ["Natalie C","Blacktown","The team explained every issue with our pool fence and showed us exactly how to fix it. Excellent service."],
+    ["Chris W","Castle Hill","Booking was easy and the inspector arrived exactly when promised. Very happy with the service."],
+    ["Lauren F","Manly","Professional, friendly and efficient. Our compliance certificate was completed faster than expected."],
+    ["Peter H","Hornsby","The report was detailed but easy to understand. It made completing the required repairs much easier."],
+    ["Amanda J","Ryde","Certified Pool Compliance took the confusion out of the inspection process. I would definitely use them again."],
+    ["Michael D","Liverpool","Great customer service and fair pricing. The inspector was thorough and answered all my questions."],
+    ["Jessica N","Cronulla","We were preparing our home for sale and needed the pool checked. The team made the entire process simple."],
+    ["Robert G","Campbelltown","Very impressed with the level of service. They were professional, honest and easy to communicate with."],
+    ["Chloe A","Mosman","The inspector was friendly and respectful of our property. Everything was explained clearly and professionally."],
+    ["Ben C","Bondi","Quick booking, helpful advice and a fast certificate. Exactly what we needed."],
+    ["Rachel V","Randwick","The team found a few small issues that we had completely missed. Their advice helped us get everything compliant quickly."],
+    ["Tom E","Chatswood","Excellent service. The inspector arrived on time and provided the report on the same day."],
+    ["Olivia R","Dee Why","Very knowledgeable and easy to deal with. The entire inspection process was stress free."],
+    ["Matthew S","Kellyville","We manage several rental properties and have used Certified Pool Compliance more than once. The service is always reliable."],
+    ["Hannah B","Coogee","Clear communication and a very professional inspection. I felt confident that our pool area was safe."],
+    ["Luke P","Mona Vale","The inspector explained the rules in plain English and gave us practical solutions. Highly recommended."],
+    ["Sophie K","Baulkham Hills","The team was organised, responsive and professional. Our inspection was completed without any problems."],
+    ["David M","Terrigal","We needed an urgent pool inspection and they were able to fit us in quickly. Fantastic service."],
+    ["Nicole W","Strathfield","Very happy with the experience. The inspector was thorough and did not rush the appointment."],
+    ["Adam T","Brookvale","Excellent communication from the first phone call through to receiving the certificate."],
+    ["Melissa C","Gosford","The team was patient and answered all our questions. The report clearly showed what needed attention."],
+    ["Jason F","Leichhardt","Professional service and reasonable pricing. I would happily recommend them to friends and family."],
+    ["Stephanie G","Lane Cove","Certified Pool Compliance helped us prepare our property for new tenants. Everything was handled quickly and professionally."],
+    ["Ryan H","Maroubra","The booking process was easy and the inspector was very helpful. Great experience overall."],
+    ["Karen D","Camden","We had no idea where to start with pool compliance. The team guided us through every step."],
+    ["Joshua L","Woy Woy","Honest advice and excellent customer service. They did not try to make the process more complicated than it needed to be."],
+    ["Amy P","Wahroonga","The inspector was knowledgeable, polite and very thorough. We received our report promptly."],
+    ["Steven N","Miranda","Great service from a professional team. The inspection was detailed and the recommendations were easy to follow."],
+    ["Laura J","Avalon","We appreciated how clearly everything was explained. The team made us feel comfortable throughout the process."],
+    ["Nathan R","Ashfield","Fast, efficient and reliable. Our certificate arrived shortly after the inspection."],
+    ["Megan S","North Sydney","A very professional business. Communication was excellent and the inspector arrived on time."],
+    ["Anthony B","Bankstown","The inspector identified a gate issue and explained how to correct it. We passed the next inspection without any problems."],
+    ["Kate E","Freshwater","Friendly team and great service. They made the pool certification process much easier than expected."],
+    ["Simon K","Epping","We received a clear report with photos and simple instructions. It was extremely helpful."],
+    ["Emily V","Botany","The team was responsive and professional. I would use Certified Pool Compliance again."],
+    ["George T","St George","The inspector was experienced and gave us helpful advice about improving safety around the pool."],
+    ["Jasmine M","Caringbah","Very efficient service. We booked online, received confirmation quickly and had the inspection completed within days."],
+    ["Paul A","Neutral Bay","Excellent experience. The team was professional and the pricing was explained before the appointment."],
+    ["Victoria D","Pymble","The inspector took the time to answer every question. We never felt rushed or confused."],
+    ["Aaron C","Western Sydney","Reliable service and honest advice. The inspection report was clear and easy to understand."],
+    ["Grace L","Collaroy","We needed compliance completed before listing our property. The team worked quickly and kept everything on track."],
+    ["Dean W","Macarthur","Great company to deal with. The inspector was friendly, punctual and knowledgeable."],
+    ["Samantha F","Newcastle","The process was simple from the first enquiry. Our certificate was delivered quickly after the inspection."],
+    ["Mitchell J","Hills District","The inspector noticed several small safety concerns and explained practical ways to resolve them."],
+    ["Renee P","Inner West","Very professional and helpful. They made a confusing process feel straightforward."],
+    ["Alex G","Erina","Excellent communication and reliable service. I would recommend them to any homeowner with a pool."],
+    ["Claire N","Double Bay","The inspection was detailed and the report was delivered promptly. Great service throughout."],
+    ["Scott R","Liverpool","We were impressed by how organised the company was. Everything happened exactly as promised."],
+    ["Bianca H","Revesby","The team helped us understand why our pool gate was not compliant and what changes were required."],
+    ["Glenn S","Frenchs Forest","Professional, efficient and easy to contact. A very positive experience."],
+    ["Fiona B","Kirrawee","The inspector was friendly and explained every part of the inspection. We felt much more confident afterward."],
+    ["Liam D","Kellyville","Fast booking and clear advice. We were able to complete the required work quickly."],
+    ["Courtney A","Newcastle","Certified Pool Compliance provided excellent support throughout the inspection and certification process."],
+    ["Patrick M","St Ives","The inspector was punctual and respectful. The report was professional and easy to follow."],
+    ["Zoe C","Five Dock","Great service and helpful communication. Our pool was certified without any unnecessary delays."],
+    ["Cameron T","Tuggerah","The team was honest about what needed to be repaired and did not recommend unnecessary work."],
+    ["Monica R","Bondi Junction","Very professional service. The inspector was thorough and made sure we understood the results."],
+    ["Dylan P","Dee Why","Quick response, fair price and excellent customer service. I would definitely recommend them."],
+    ["Brooke K","Cronulla","The inspection process was much easier than we expected. Everything was clearly explained."],
+    ["Ian W","Parramatta","We use Certified Pool Compliance for our rental properties and have always received reliable service."],
+    ["Chelsea J","Wollongong","The team was friendly and organised. Our report arrived quickly and included helpful information."],
+    ["Martin F","Manly Vale","The inspector was extremely knowledgeable and gave practical advice about our pool barrier."],
+    ["Alicia E","Hornsby","The customer service was excellent. Every email and phone call was answered quickly."],
+    ["Bradley N","Penrith","A professional and trustworthy company. The inspection was completed thoroughly and efficiently."],
+    ["Vanessa L","Chatswood","We appreciated the clear communication and simple booking process. The team made everything easy."],
+    ["Shaun B","Surry Hills","Great experience from beginning to end. The inspector was helpful and the certificate arrived promptly."],
+    ["Tahlia S","Central Coast","The team helped us fix several compliance issues before our final inspection. Their advice was very useful."],
+    ["Greg H","Northern Beaches","Reliable, professional and easy to deal with. I would happily use their service again."],
+    ["Isabella D","Rose Bay","The inspector was polite, knowledgeable and very thorough. We were impressed with the service."],
+    ["Joel C","Blacktown","Everything was explained clearly and there were no hidden costs. Very happy with the result."],
+    ["Maddison T","Sutherland","The inspection was completed on time and the report was sent through quickly. Excellent service."],
+    ["Richard P","Castle Hill","Certified Pool Compliance provided clear advice and helped us prepare our property for sale."],
+    ["Hayley M","Coogee","Friendly service and great communication. The entire process was simple and stress free."],
+    ["Kevin R","Gosford","The inspector found an issue with our pool gate that we had not noticed. We appreciated the careful inspection."],
+    ["Abbey F","Ryde","Very professional and efficient. We received regular updates and always knew what was happening."],
+    ["Marcus G","Newtown","The team gave us practical recommendations and allowed us time to make the required changes."],
+    ["Jade K","Brookvale","Excellent customer service. The staff were friendly, patient and happy to answer questions."],
+    ["Tim N","Camden","The inspection was thorough and the report was easy to understand. A great service for pool owners."],
+    ["Eliza W","Mosman","Certified Pool Compliance made the certification process simple. I would recommend them without hesitation."],
+    ["Adrian J","Randwick","Fast response and professional service. The inspector arrived on time and completed everything efficiently."],
+    ["Caitlin V","Terrigal","We had a great experience. The team explained the compliance requirements clearly and helped us feel prepared."],
+    ["Jonathan S","Baulkham Hills","The inspector was experienced and gave honest feedback. We knew exactly what needed to be completed."],
+    ["Belinda A","Mona Vale","Professional from the first phone call. The inspection and certification process was handled very well."],
+    ["Hamish D","Strathfield","Clear pricing, reliable communication and excellent service. I would use them again."],
+    ["Ruby C","Lane Cove","The inspector was friendly and took the time to carefully check the entire pool area."],
+    ["Stephen T","Campbelltown","We needed the inspection completed quickly for a property settlement. The team was incredibly helpful."],
+    ["Paige L","Maroubra","Very happy with the service. The report included clear explanations and useful recommendations."],
+    ["Colin P","Epping","A reliable company with knowledgeable inspectors. The entire process was handled professionally."],
+    ["Georgia B","Freshwater","The team was responsive and easy to work with. Our certificate was issued quickly after the inspection."],
+    ["Damien R","Caringbah","The inspector explained the safety requirements clearly and helped us correct a few small issues."],
+    ["Lucy H","Newcastle","Great service, friendly staff and excellent communication. The process could not have been easier."],
+    ["Oliver M","Sydney","Certified Pool Compliance delivered exactly what they promised. Professional inspection, clear advice and fast certification."]
+  ];
+
+  // Build the 3-row marquee, each row duplicated once for a seamless loop
+  var marquee = document.getElementById('reviews-marquee');
+  if (marquee) {
+    var rows = [[],[],[]];
+    REVIEWS.forEach(function(r, i){ rows[i % 3].push(r); });
+    rows.forEach(function(rowData, rowIndex){
+      var row = document.createElement('div');
+      row.className = 'reviews-row' + (rowIndex === 1 ? ' reverse' : '');
+      row.style.setProperty('--row-dur', (150 + rowIndex * 28) + 's');
+      var html = rowData.map(function(r){
+        return '<div class="review-tile"><div class="stars">★★★★★</div><p>' + r[2] + '</p><cite>' + r[0] + '<span>' + r[1] + '</span></cite></div>';
+      }).join('');
+      row.innerHTML = html + html; // duplicate set for -50% loop
+      var second = row.children.length / 2;
+      for (var c = second; c < row.children.length; c++) { row.children[c].setAttribute('aria-hidden', 'true'); }
+      marquee.appendChild(row);
+    });
+  }
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveals
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var revealTargets = document.querySelectorAll('.section-head, .service-card, .service-detail, .state-block, .step, .quiz-card, .faq-item, .two-col > *, .cred-card, .price-card');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(function(el, i){
+      el.classList.add('reveal-init');
+      el.style.transitionDelay = (i % 4) * 70 + 'ms';
+      io.observe(el);
+    });
+  }
+
+  // Pointer tilt on cards (fine pointers only)
+  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.service-card, .state-block, .review-tile, .price-card').forEach(function(card){
+      card.classList.add('tilt');
+    });
+    document.body.addEventListener('mousemove', function(e){
+      var card = e.target.closest('.tilt');
+      if (!card) return;
+      var rect = card.getBoundingClientRect();
+      var rx = ((e.clientY - rect.top) / rect.height - 0.5) * -6;
+      var ry = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
+      card.classList.remove('tilt-off');
+      card.style.transform = 'perspective(800px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) translateY(-4px)';
+    });
+    document.body.addEventListener('mouseout', function(e){
+      var card = e.target.closest('.tilt');
+      if (!card || card.contains(e.relatedTarget)) return;
+      card.classList.add('tilt-off');
+      card.style.transform = '';
+    });
+  }
+
+  // Subtle hero parallax
+  var heroMedia = document.querySelector('.hero-media video');
+  if (heroMedia && !reduceMotion) {
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        var y = window.scrollY;
+        if (y < window.innerHeight * 1.2) {
+          heroMedia.style.transform = 'translateY(' + (y * 0.18).toFixed(1) + 'px) scale(1.06)';
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+});
 </script>
 </body>
 </html>

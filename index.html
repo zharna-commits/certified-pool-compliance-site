@@ -1617,6 +1617,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Phones: keep the poster, skip the video download
+  var heroVid = document.querySelector('.hero-media video');
+  if (heroVid && window.innerWidth < 640) {
+    heroVid.pause();
+    heroVid.querySelectorAll('source').forEach(function(s){ s.remove(); });
+    heroVid.removeAttribute('autoplay');
+    heroVid.load();
+  }
+
   // Subtle hero parallax
   var heroMedia = document.querySelector('.hero-media video');
   if (heroMedia && !reduceMotion) {

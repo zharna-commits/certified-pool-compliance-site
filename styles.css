@@ -893,3 +893,29 @@ section{ position:relative; }
 .footer-grid{ gap:32px; }
 .footer-brand{ flex:1.4 1 220px; min-width:200px; }
 .footer-col{ flex:1 1 140px; min-width:120px; }
+
+/* Modern pricing tiers */
+.pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch; margin-top:8px; }
+.price-card.tier{ display:flex; flex-direction:column; padding:36px 30px 30px; }
+.tier .tier-name{ font-family:var(--font-body); font-weight:600; font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mint-500); }
+.tier h4{ font-size:22px; color:var(--navy-900); margin-top:10px; font-weight:800; }
+.tier .tier-price{ font-family:var(--font-display); font-weight:800; font-size:52px; color:var(--navy-900); margin-top:14px; line-height:1; }
+.tier .tier-price small{ font-family:var(--font-body); font-weight:500; font-size:14px; color:var(--muted); margin-left:6px; }
+.tier .tier-sub{ font-size:14px; color:var(--muted); margin-top:10px; line-height:1.6; }
+.tier ul{ margin:22px 0 26px; display:flex; flex-direction:column; gap:11px; }
+.tier li{ display:flex; gap:10px; align-items:flex-start; font-size:14.5px; line-height:1.55; color:var(--ink); }
+.tier li svg{ width:17px; height:17px; stroke:var(--mint-500); flex-shrink:0; margin-top:2.5px; }
+.tier .btn{ margin-top:auto; width:100%; }
+.tier-badge{
+  position:absolute; top:16px; right:18px; z-index:1;
+  background:var(--grad-brand-strong); color:#fff;
+  font-family:var(--font-display); font-weight:700; font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase;
+  padding:6px 14px; border-radius:var(--radius-pill);
+}
+.price-card.tier-featured{ background:var(--grad-navy); border-color:rgba(255,255,255,0.14); }
+.price-card.tier-featured:hover{ background:var(--grad-navy); }
+.tier-featured .tier-name{ color:var(--mint-300); }
+.tier-featured h4, .tier-featured .tier-price, .tier-featured li{ color:#f6f8fb; }
+.tier-featured .tier-price small, .tier-featured .tier-sub{ color:rgba(246,248,251,0.6); }
+.tier-featured li svg{ stroke:var(--mint-400); }
+@media (max-width:900px){ .pricing-grid{ grid-template-columns:1fr; } }

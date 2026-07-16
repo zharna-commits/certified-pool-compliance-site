@@ -883,3 +883,8 @@ section{ position:relative; }
   .price-card:hover, .credential-list .row:hover, .on-light .step:hover,
   .blueprint-bg .step:hover, .on-dark .step:hover{ transform:none; }
 }
+
+/* Dark-section state cards: white card needs dark text */
+.blueprint-bg .state-block .code, .on-dark .state-block .code{ color:var(--mint-500); }
+.blueprint-bg .state-block h4, .on-dark .state-block h4{ color:var(--navy-900); }
+.blueprint-bg .state-block p, .on-dark .state-block p{ color:rgba(11,20,32,0.68); }

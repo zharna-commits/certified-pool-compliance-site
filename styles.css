@@ -969,6 +969,8 @@ section{ position:relative; }
 .cpc-chat-head strong{ display:block; font-family:var(--font-display); font-size:16px; }
 .cpc-chat-head span{ font-size:12px; color:rgba(246,248,251,0.6); }
 .cpc-chat-close{ position:absolute; top:10px; right:12px; background:none; border:none; color:#f6f8fb; font-size:22px; cursor:pointer; line-height:1; padding:6px; }
+.cpc-chat-min{ position:absolute; top:10px; right:44px; background:none; border:none; color:#f6f8fb; font-size:20px; font-weight:700; cursor:pointer; line-height:1; padding:6px; }
+.cpc-chat-min:hover, .cpc-chat-close:hover{ color:var(--mint-300); }
 .cpc-chat-msgs{ padding:16px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; min-height:120px; flex:1; }
 .cpc-msg{ max-width:85%; padding:10px 14px; border-radius:14px; font-size:14px; line-height:1.55; }
 .cpc-msg a{ color:var(--blue-600); text-decoration:underline; }

@@ -1006,3 +1006,21 @@ section{ position:relative; }
   .hero-form-panel:not(.mform-open){ background:transparent; border:none; box-shadow:none; padding:0; backdrop-filter:none; }
   .hero-form-panel.mform-open .mform-toggle{ margin-bottom:18px; }
 }
+
+@media (max-width:760px){
+  .header-actions .btn-coral{ display:none; }
+  .site-header .container{ justify-content:space-between; }
+  .hero-grid > div{ text-align:center; }
+  .hero .eyebrow{ justify-content:center; }
+  .hero h1{ margin-left:auto; margin-right:auto; }
+  .hero-lede{ margin-left:auto; margin-right:auto; }
+  .hero-ctas{ align-items:center; }
+  .hero-microline{ justify-content:center; }
+}
+@media (max-width:480px){
+  .brand-text .b1{ font-size:15px; }
+}
+
+@media (max-width:980px){
+  .hero-ctas .btn-coral{ display:none; }
+}

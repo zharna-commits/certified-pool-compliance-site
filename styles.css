@@ -822,3 +822,8 @@ section{ position:relative; }
     0 12px 28px -10px rgba(15,184,148,0.32);
 }
 .price-card:hover{ transform:translateY(-5px); transition:transform .25s ease, box-shadow .25s ease; }
+
+/* Header spacing fix */
+.main-nav{ gap:26px; }
+.main-nav a{ white-space:nowrap; }
+.header-phone{ white-space:nowrap; margin-left:6px; }

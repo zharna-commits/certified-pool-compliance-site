@@ -890,5 +890,6 @@ section{ position:relative; }
 .blueprint-bg .state-block p, .on-dark .state-block p{ color:rgba(11,20,32,0.68); }
 
 /* Footer columns: use full width */
-.footer-brand{ flex:1.6 1 260px; min-width:240px; }
-.footer-col{ flex:1 1 170px; min-width:150px; }
+.footer-grid{ gap:32px; }
+.footer-brand{ flex:1.4 1 220px; min-width:200px; }
+.footer-col{ flex:1 1 140px; min-width:120px; }

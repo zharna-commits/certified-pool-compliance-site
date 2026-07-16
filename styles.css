@@ -959,6 +959,7 @@ section{ position:relative; }
 .cpc-chat-bubble svg{ width:26px; height:26px; }
 .cpc-chat-bubble:hover{ transform:scale(1.08); }
 .cpc-chat-bubble.cpc-open{ transform:scale(0.92); }
+.cpc-chat-panel[hidden], .cpc-chat-panel.cpc-hidden{ display:none !important; }
 .cpc-chat-panel{
   position:absolute; right:0; bottom:74px; width:360px; max-width:calc(100vw - 44px);
   background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg);
@@ -968,8 +969,8 @@ section{ position:relative; }
 .cpc-chat-head{ background:var(--grad-navy); color:#f6f8fb; padding:16px 18px; position:relative; }
 .cpc-chat-head strong{ display:block; font-family:var(--font-display); font-size:16px; }
 .cpc-chat-head span{ font-size:12px; color:rgba(246,248,251,0.6); }
-.cpc-chat-close{ position:absolute; top:10px; right:12px; background:none; border:none; color:#f6f8fb; font-size:22px; cursor:pointer; line-height:1; padding:6px; }
-.cpc-chat-min{ position:absolute; top:10px; right:44px; background:none; border:none; color:#f6f8fb; font-size:20px; font-weight:700; cursor:pointer; line-height:1; padding:6px; }
+.cpc-chat-close{ position:absolute; top:6px; right:8px; background:none; border:none; color:#f6f8fb; font-size:22px; cursor:pointer; line-height:1; padding:12px; min-width:44px; min-height:44px; }
+.cpc-chat-min{ position:absolute; top:6px; right:52px; background:none; border:none; color:#f6f8fb; font-size:20px; font-weight:700; cursor:pointer; line-height:1; padding:12px; min-width:44px; min-height:44px; }
 .cpc-chat-min:hover, .cpc-chat-close:hover{ color:var(--mint-300); }
 .cpc-chat-msgs{ padding:16px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; min-height:120px; flex:1; }
 .cpc-msg{ max-width:85%; padding:10px 14px; border-radius:14px; font-size:14px; line-height:1.55; }
@@ -992,5 +993,6 @@ section{ position:relative; }
 @keyframes cpc-b{ 0%,60%,100%{ opacity:.3; } 30%{ opacity:1; } }
 @media (max-width:560px){
   .cpc-chat{ right:14px; bottom:14px; }
-  .cpc-chat-panel{ bottom:70px; }
+  .cpc-chat-panel[hidden], .cpc-chat-panel.cpc-hidden{ display:none !important; }
+.cpc-chat-panel{ bottom:70px; }
 }

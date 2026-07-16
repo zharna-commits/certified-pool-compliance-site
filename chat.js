@@ -53,7 +53,7 @@
       '<button class="cpc-chat-bubble" aria-label="Open chat" aria-expanded="false">' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>' +
       '</button>' +
-      '<div class="cpc-chat-panel" role="dialog" aria-label="Chat with Certified Pool Compliance" hidden>' +
+      '<div class="cpc-chat-panel cpc-hidden" role="dialog" aria-label="Chat with Certified Pool Compliance" hidden>' +
       '<div class="cpc-chat-head"><strong>Pool Compliance Help</strong><span>Instant answers, Mon to Fri follow-up</span><button class="cpc-chat-min" aria-label="Minimise chat">&#8211;</button><button class="cpc-chat-close" aria-label="Close chat">&times;</button></div>' +
       '<div class="cpc-chat-msgs"></div>' +
       '<div class="cpc-chat-chips"></div>' +
@@ -99,6 +99,7 @@
     function toggle(open) {
       opened = open;
       panel.hidden = !open;
+      panel.classList.toggle('cpc-hidden', !open);
       bubble.setAttribute('aria-expanded', open ? 'true' : 'false');
       bubble.classList.toggle('cpc-open', open);
       if (open && !msgs.children.length) {

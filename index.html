@@ -59,6 +59,7 @@
       </div>
 
       <div class="hero-form-panel">
+        <button type="button" class="mform-toggle btn btn-coral btn-block" aria-expanded="false">Book My Inspection <span class="mform-arrow">&#9662;</span></button>
         <p class="eyebrow">Get A Fixed Price</p>
         <h3>Book your inspection now</h3>
         <p class="panel-sub">Tell us your suburb and what you need. We confirm a fixed price and the next available date, usually within one business day.</p>
@@ -1571,6 +1572,18 @@ document.addEventListener('DOMContentLoaded', function() {
       var second = row.children.length / 2;
       for (var c = second; c < row.children.length; c++) { row.children[c].setAttribute('aria-hidden', 'true'); }
       marquee.appendChild(row);
+    });
+  }
+
+  // Mobile: hero form collapses behind the Book My Inspection button
+  var mToggle = document.querySelector('.mform-toggle');
+  if (mToggle) {
+    mToggle.addEventListener('click', function () {
+      var panel = mToggle.closest('.hero-form-panel');
+      var open = panel.classList.toggle('mform-open');
+      mToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mToggle.querySelector('.mform-arrow').innerHTML = open ? '&#9652;' : '&#9662;';
+      if (open) setTimeout(function(){ panel.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
     });
   }
 

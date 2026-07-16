@@ -996,3 +996,13 @@ section{ position:relative; }
   .cpc-chat-panel[hidden], .cpc-chat-panel.cpc-hidden{ display:none !important; }
 .cpc-chat-panel{ bottom:70px; }
 }
+
+/* Mobile: collapse hero form behind a single button */
+.mform-toggle{ display:none; }
+@media (max-width:980px){
+  .mform-toggle{ display:flex; font-size:16.5px; padding:18px 24px; }
+  .mform-arrow{ margin-left:8px; }
+  .hero-form-panel:not(.mform-open) > *:not(.mform-toggle){ display:none; }
+  .hero-form-panel:not(.mform-open){ background:transparent; border:none; box-shadow:none; padding:0; backdrop-filter:none; }
+  .hero-form-panel.mform-open .mform-toggle{ margin-bottom:18px; }
+}

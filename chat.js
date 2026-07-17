@@ -61,6 +61,10 @@
       '</div>';
     document.body.appendChild(root);
 
+    var bookFab = el('a', 'cpc-book-fab', 'Book Now');
+    bookFab.href = document.getElementById('book') ? '#book' : '/?page=contact';
+    root.appendChild(bookFab);
+
     var bubble = root.querySelector('.cpc-chat-bubble');
     var panel = root.querySelector('.cpc-chat-panel');
     var msgs = root.querySelector('.cpc-chat-msgs');
@@ -102,6 +106,7 @@
       panel.classList.toggle('cpc-hidden', !open);
       bubble.setAttribute('aria-expanded', open ? 'true' : 'false');
       bubble.classList.toggle('cpc-open', open);
+      if (bookFab) bookFab.style.display = open ? 'none' : '';
       if (open && !msgs.children.length) {
         botReply('Hi. Ask me about pricing, booking, your state’s pool rules, or what happens if a pool fails inspection.');
       }

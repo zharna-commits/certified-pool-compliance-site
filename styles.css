@@ -939,6 +939,12 @@ section{ position:relative; }
   .quiz-card{ padding:26px 20px; }
   .quiz-card .btn-xl{ white-space:normal; font-size:16px; padding:16px 20px; line-height:1.35; }
   .quiz-step h3{ font-size:20px; }
+  .breadcrumb-hero .container{ text-align:center; }
+  .breadcrumb-hero p{ margin-left:auto; margin-right:auto; }
+  #page-contact .two-col > div{ width:100%; }
+  #page-contact .form-wrap h3{ text-align:center; }
+  #book .section-head{ text-align:center; margin-left:auto; margin-right:auto; }
+  #book .section-head p{ margin-left:auto; margin-right:auto; }
   .form-wrap{ padding:30px 20px; }
   .stat-row .s{ padding-left:12px; }
   .stat-row .n{ font-size:30px; }
@@ -953,6 +959,14 @@ section{ position:relative; }
 
 /* Chat widget */
 .cpc-chat{ position:fixed; right:22px; bottom:22px; z-index:400; font-family:var(--font-body); }
+.cpc-book-fab{
+  position:absolute; right:0; bottom:74px; display:block;
+  background:var(--grad-brand-strong); color:#ffffff; font-family:var(--font-display); font-weight:800;
+  font-size:14px; letter-spacing:0.02em; padding:13px 22px; border-radius:var(--radius-pill);
+  text-decoration:none; white-space:nowrap; text-align:center;
+  box-shadow:var(--shadow-glow); transition:transform .2s ease, box-shadow .2s ease;
+}
+.cpc-book-fab:hover{ transform:translateY(-3px); box-shadow:var(--shadow-glow-lg); }
 .cpc-chat-bubble{
   width:60px; height:60px; border-radius:50%; border:none; cursor:pointer;
   background:var(--grad-brand-strong); color:#fff; display:flex; align-items:center; justify-content:center;

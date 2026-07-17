@@ -950,6 +950,8 @@ section{ position:relative; }
   .form-note{ overflow-wrap:anywhere; }
   .contact-info-list .item > div{ min-width:0; }
   .contact-info-list .val{ overflow-wrap:anywhere; }
+  .footer-col{ min-width:0; }
+  .footer-col a, .footer-col li, .footer-brand p{ overflow-wrap:anywhere; }
   .form-wrap{ padding:30px 20px; }
   .stat-row .s{ padding-left:12px; }
   .stat-row .n{ font-size:30px; }

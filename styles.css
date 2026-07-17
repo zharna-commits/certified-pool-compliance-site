@@ -937,6 +937,8 @@ section{ position:relative; }
   .btn-mega, .mega-actions .btn{ white-space:normal; width:100%; font-size:16.5px; padding:18px 24px; }
   .tier .tier-price{ font-size:44px; }
   .quiz-card{ padding:26px 20px; }
+  .quiz-card .btn-xl{ white-space:normal; font-size:16px; padding:16px 20px; line-height:1.35; }
+  .quiz-step h3{ font-size:20px; }
   .form-wrap{ padding:30px 20px; }
   .stat-row .s{ padding-left:12px; }
   .stat-row .n{ font-size:30px; }

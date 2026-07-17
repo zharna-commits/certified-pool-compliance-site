@@ -945,6 +945,11 @@ section{ position:relative; }
   #page-contact .form-wrap h3{ text-align:center; }
   #book .section-head{ text-align:center; margin-left:auto; margin-right:auto; }
   #book .section-head p{ margin-left:auto; margin-right:auto; }
+  .two-col > *{ min-width:0; }
+  .form-wrap{ max-width:100%; }
+  .form-note{ overflow-wrap:anywhere; }
+  .contact-info-list .item > div{ min-width:0; }
+  .contact-info-list .val{ overflow-wrap:anywhere; }
   .form-wrap{ padding:30px 20px; }
   .stat-row .s{ padding-left:12px; }
   .stat-row .n{ font-size:30px; }
